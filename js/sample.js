@@ -30,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalCareer = document.getElementById('modalCareer');
     const modalVision = document.getElementById('modalVision');
 
+    if (!modal || !modalClose || !modalImg || !modalRole || !modalName || !modalCareer || !modalVision) return;
+
     // カードをクリックしたとき
     staffCards.forEach(card => {
         card.addEventListener('click', () => {
@@ -61,15 +63,17 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- スクロールに合わせてロードマップをふわっと表示する処理 ---
 document.addEventListener("DOMContentLoaded", function () {
     const roadItems = document.querySelectorAll(".road-step-item");
+    const roadSteps = document.querySelector(".road-steps");
 
-    if (roadItems.length > 0) {
+    if (roadSteps && roadItems.length > 0 && "IntersectionObserver" in window &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        roadSteps.classList.add("animate-road");
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 // 画面内に入ったら
                 if (entry.isIntersecting) {
                     entry.target.classList.add("is-show");
-                    // 一度表示されたら監視を終了する場合
-                    // observer.unobserve(entry.target);
+                    observer.unobserve(entry.target);
                 }
             });
         }, {
