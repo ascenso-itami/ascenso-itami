@@ -5,7 +5,7 @@ html {
 }
 @font-face {
     font-family: 'Dusha V5';
-    src: url('../fonts/DushaV5-Regular 400.ttf') format('truetype'); /* フォントファイルを置いた場所へのパスに合わせて変更してください */
+    src: url('../font/Dusha V5 Regular 400.ttf') format('truetype'); /* フォントファイルを置いた場所へのパスに合わせて変更してください */
     font-weight: normal;
     font-style: normal;
 }
@@ -1999,3 +1999,199 @@ body {
 .road-step-item:nth-child(6) { transition-delay: 0.6s; }
 .road-step-item:nth-child(7) { transition-delay: 0.7s; }
 .road-step-item:nth-child(8) { transition-delay: 0.8s; }
+
+/* =========================================================
+   PRODUCTION FIX
+   about.html の HISTORY & GOAL 用
+   既存CSSは削除せず、この部分だけ最後に追加
+   ========================================================= */
+
+.roadmap-wrapper {
+    width: 100%;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.roadmap-timeline {
+    position: relative;
+    width: 100%;
+    padding: 10px 0 20px;
+}
+
+/* 中央の点線 */
+.roadmap-timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: repeating-linear-gradient(
+        to bottom,
+        #D1D5DB 0,
+        #D1D5DB 12px,
+        transparent 12px,
+        transparent 22px
+    );
+    z-index: 0;
+}
+
+.roadmap-step {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 105px;
+    margin-bottom: 42px;
+    z-index: 1;
+}
+
+.roadmap-step:last-child {
+    margin-bottom: 0;
+}
+
+/* 左右交互 */
+.roadmap-step:nth-child(odd) {
+    justify-content: flex-start;
+    padding-right: 52%;
+}
+
+.roadmap-step:nth-child(even) {
+    justify-content: flex-end;
+    padding-left: 52%;
+}
+
+.roadmap-marker {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #2D3D31;
+    border: 4px solid #FFFFFF;
+    box-shadow: 0 0 0 2px #2D3D31;
+    z-index: 3;
+}
+
+.roadmap-marker.future-marker {
+    background: #C5A059;
+    box-shadow: 0 0 0 2px #C5A059;
+}
+
+.roadmap-content-box {
+    position: relative;
+    width: 100%;
+    padding: 16px 18px;
+    background: #FFFFFF;
+    border: 2px solid #2D3D31;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* 中央線までの短い線 */
+.roadmap-step:nth-child(odd) .roadmap-content-box::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -26px;
+    width: 26px;
+    height: 2px;
+    transform: translateY(-50%);
+    background: #D1D5DB;
+}
+
+.roadmap-step:nth-child(even) .roadmap-content-box::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -26px;
+    width: 26px;
+    height: 2px;
+    transform: translateY(-50%);
+    background: #D1D5DB;
+}
+
+.roadmap-date-tag {
+    display: inline-block;
+    margin-bottom: 8px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    background: #F1F5F9;
+    color: #2D3D31;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.roadmap-date-tag.future-tag {
+    background: #FEF3C7;
+    color: #92400E;
+}
+
+/* 既存の .about-sub-section p より優先 */
+.roadmap-content-box .roadmap-text {
+    margin: 0 !important;
+    color: #1F2937 !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    line-height: 1.6 !important;
+}
+
+.goal-timeline .roadmap-content-box {
+    border-color: #C5A059;
+    background: #FFFBEB;
+}
+
+/* ヘッダーのチーム名フォントを最後に固定 */
+.team-name {
+    font-family: 'Dusha V5', sans-serif !important;
+}
+
+/* スマホ */
+@media (max-width: 768px) {
+    .roadmap-timeline {
+        padding-left: 30px;
+    }
+
+    .roadmap-timeline::before {
+        left: 8px;
+        transform: none;
+    }
+
+    .roadmap-step,
+    .roadmap-step:nth-child(odd),
+    .roadmap-step:nth-child(even) {
+        justify-content: flex-start;
+        min-height: auto;
+        padding-left: 18px;
+        padding-right: 0;
+        margin-bottom: 28px;
+    }
+
+    .roadmap-marker {
+        left: -20px;
+        top: 28px;
+        width: 14px;
+        height: 14px;
+    }
+
+    .roadmap-content-box {
+        width: 100%;
+        padding: 14px 15px;
+    }
+
+    .roadmap-step:nth-child(odd) .roadmap-content-box::after,
+    .roadmap-step:nth-child(even) .roadmap-content-box::before {
+        display: none;
+    }
+
+    .roadmap-content-box .roadmap-text {
+        font-size: 14px !important;
+    }
+}
+
