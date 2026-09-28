@@ -1939,6 +1939,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     width: 65%; /* 吹き出しの幅 */
+    min-width: 0;
     position: relative;
 }
 
@@ -1970,22 +1971,29 @@ body {
     color: #92400e;
 }
 
-.road-text {
+.road-content-bubble .road-text {
     font-size: 13px;
     color: #1f2937;
     margin: 0;
     font-weight: 600;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
 }
 
 /* --- スクロール連動フェードインのアニメーション設定 --- */
 .road-step-item {
+    opacity: 1;
+    transform: none;
+}
+
+.road-steps.animate-road .road-step-item {
     opacity: 0;
     transform: translateY(30px); /* 最初は少し下に下げておく */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 /* スクロールして画面内に入ると付与されるクラス */
-.road-step-item.is-show {
+.road-steps.animate-road .road-step-item.is-show {
     opacity: 1;
     transform: translateY(0);
 }
@@ -2195,3 +2203,50 @@ body {
     }
 }
 
+/* チーム情報ページの詳細と費用表 */
+.about-info-card {
+    margin-top: 15px;
+}
+
+.about-detail-heading {
+    margin-top: 25px;
+    color: #2D3D31;
+    font-size: 16px;
+}
+
+.cost-table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.cost-table th,
+.cost-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    vertical-align: top;
+}
+
+.cost-table th {
+    width: 35%;
+}
+
+.cost-note {
+    font-size: 12px;
+    color: #6B7280;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        padding-bottom: 100px;
+    }
+
+    .winding-road-container {
+        max-width: 100%;
+    }
+
+    .road-content-bubble {
+        width: 70%;
+    }
+}
