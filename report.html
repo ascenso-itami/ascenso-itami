@@ -4,38 +4,35 @@
     <meta name="description" content="兵庫県伊丹市で活動する社会人サッカーチーム「ASCENSO ITAMI（アセンソ伊丹）」の活動報告・試合結果一覧です。">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102c27">
+    <link rel="icon" href="image/logo.png">
     <title>活動報告・試合結果 | ASCENSO ITAMI 公式サイト</title>
     <!-- Google Fonts (Montserrat) -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
     <!-- CSSファイルの読み込み -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/sample.css">
 </head>
-<body>
+<body class="page-report">
+  <a class="skip-link" href="#main-content">本文へ移動</a>
 
     <!-- ヘッダー -->
     <header class="header">
-        <div class="logo-area">
-            <a href="main.html"><img src="image/logo.png" alt="ASCENSO ITAMI ロゴ" class="logo-img"></a>
-            <div class="team-title">
-                <span class="team-name">ASCENSO ITAMI</span>
-            </div>
-        </div>
-        <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="nav-menu" id="navMenu">
-            <a href="main.html">TOP</a>
-            <a href="about.html">チーム情報</a>
-            <a href="staff.html">スタッフ/選手紹介</a>
-            <a href="report.html" class="active">活動報告</a>
-            <a href="contact.html" class="nav-btn">入団希望者</a>
-        </nav>
-    </header>
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="ASCENSO ITAMI トップページ"><img src="image/logo.png" alt="" width="52" height="52"><span class="brand-type"><strong>ASCENSO</strong><small>ITAMI FOOTBALL CLUB</small></span></a>
+      <button class="hamburger-btn" id="hamburgerBtn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+      <nav class="nav-menu" id="navMenu" aria-label="メインメニュー">
+        <a href="index.html">TOP</a>
+        <a href="about.html">チーム情報</a>
+        <a href="staff.html">選手・スタッフ</a>
+        <a href="report.html" aria-current="page">試合結果</a>
+        <a class="nav-btn" href="contact.html">体験参加する <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
 
     <!-- ページタイトルバナー -->
-    <section class="page-header">
+    <section class="page-header" id="main-content">
         <h1>MATCH & REPORT</h1>
         <p>活動報告・試合結果</p>
     </section>
@@ -66,9 +63,7 @@
             <div class="match-details">
                 <p><strong>試合形式：</strong> 35分×2本</p>
                 <p><strong>試合結果・経過：</strong><br>
-                    ・トータル：ASCENSO 7 - 0 宝塚FC（勝利）<br>
-                    ・得点者：斧 佳吾×3、赤﨑 瑛太、山本 桃大、岡部 東弥、 白川 翔彪<br>
-                    ・アシスト：岩本 弘、河岡 朝日、 山本 桃大、 藤原 光希、越 晴吾、 藤井 都詩
+                    ・トータル：ASCENSO 5 - 1 宝塚FC（勝利）
                 </p>
                 <p class="match-comment"><strong>試合コメント：</strong><br>相手の人数が９人なこともありゴールラッシュとなりました！それと同時に課題が残る試合ともなりました。</p>
             </div>
@@ -535,7 +530,7 @@
 
             <!-- トップへ戻るボタン -->
             <div class="back-btn-area" style="margin-top: 60px; text-align: center;">
-                <a href="main.html" class="back-btn">← TOPページに戻る</a>
+                <a href="index.html" class="back-btn">← TOPページに戻る</a>
             </div>
 
         </div>
@@ -546,5 +541,13 @@
 
     <!-- jsフォルダ内の sample.js を読み込む -->
     <script src="js/sample.js"></script>
+
+<footer class="site-footer">
+  <div class="shell footer-main">
+    <div><a class="footer-brand" href="index.html">ASCENSO<span>ITAMI</span></a><p>伊丹から、もっと高みへ。</p></div>
+    <nav aria-label="フッターメニュー"><a href="about.html">チーム情報</a><a href="staff.html">選手・スタッフ</a><a href="report.html">試合結果</a><a href="contact.html">体験参加</a><a href="https://www.instagram.com/ascenso_itami/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a></nav>
+  </div>
+  <div class="shell footer-bottom"><span>© ASCENSO ITAMI</span><span>RESPECT / CHALLENGE / CONNECTION</span></div>
+</footer>
 </body>
 </html>

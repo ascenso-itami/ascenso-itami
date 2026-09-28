@@ -4,39 +4,35 @@
     <meta name="description" content="兵庫県伊丹市で活動する社会人サッカーチーム「ASCENSO ITAMI（アセンソ伊丹）」の公式サイトです。兵庫県リーグ昇格を目指し、礼儀と挑戦を大切に活動しています。入団希望・体験参加はこちらから。">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102c27">
+    <link rel="icon" href="image/logo.png">
     <title>入団希望・体験参加 | ASCENSO ITAMI 公式サイト</title>
     <!-- Google Fonts (Montserrat) -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
     <!-- CSSファイルの読み込み -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/sample.css">
 </head>
-<body>
+<body class="page-contact">
+  <a class="skip-link" href="#main-content">本文へ移動</a>
 
     <!-- ヘッダー -->
     <header class="header">
-        <div class="logo-area">
-            <!-- ロゴ画像 -->
-            <a href="main.html"><img src="image/logo.png" alt="ASCENSO ITAMI ロゴ" class="logo-img"></a>
-            <div class="team-title">
-                <span class="team-name">ASCENSO ITAMI</span>
-            </div>
-        </div>
-        <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="nav-menu" id="navMenu">
-            <a href="main.html">TOP</a>
-            <a href="about.html">チーム情報</a>
-            <a href="staff.html">スタッフ/選手紹介</a>
-            <a href="report.html">活動報告</a>
-            <a href="contact.html" class="nav-btn">入団希望者</a>
-        </nav>
-    </header>
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="ASCENSO ITAMI トップページ"><img src="image/logo.png" alt="" width="52" height="52"><span class="brand-type"><strong>ASCENSO</strong><small>ITAMI FOOTBALL CLUB</small></span></a>
+      <button class="hamburger-btn" id="hamburgerBtn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+      <nav class="nav-menu" id="navMenu" aria-label="メインメニュー">
+        <a href="index.html">TOP</a>
+        <a href="about.html">チーム情報</a>
+        <a href="staff.html">選手・スタッフ</a>
+        <a href="report.html">試合結果</a>
+        <a class="nav-btn" href="contact.html" aria-current="page">体験参加する <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
 
     <!-- ページタイトルバナー -->
-    <section class="page-header">
+    <section class="page-header" id="main-content">
         <h1>JOIN US</h1>
         <p>入団希望・体験参加</p>
     </section>
@@ -203,12 +199,20 @@
 
             <!-- トップへ戻るボタン -->
             <div class="back-btn-area">
-                <a href="main.html" class="back-btn">← TOPページに戻る</a>
+                <a href="index.html" class="back-btn">← TOPページに戻る</a>
             </div>
 
         </div>
     </section>
     <!-- jsフォルダ内の sample.js を読み込む -->
     <script src="js/sample.js"></script>
+
+<footer class="site-footer">
+  <div class="shell footer-main">
+    <div><a class="footer-brand" href="index.html">ASCENSO<span>ITAMI</span></a><p>伊丹から、もっと高みへ。</p></div>
+    <nav aria-label="フッターメニュー"><a href="about.html">チーム情報</a><a href="staff.html">選手・スタッフ</a><a href="report.html">試合結果</a><a href="contact.html">体験参加</a><a href="https://www.instagram.com/ascenso_itami/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a></nav>
+  </div>
+  <div class="shell footer-bottom"><span>© ASCENSO ITAMI</span><span>RESPECT / CHALLENGE / CONNECTION</span></div>
+</footer>
 </body>
 </html>

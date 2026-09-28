@@ -1,114 +1,189 @@
-// ページが完全に読み込まれてからプログラムを実行する
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const navMenu = document.getElementById('navMenu');
-
-    if (hamburgerBtn && navMenu) {
-        hamburgerBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            hamburgerBtn.classList.toggle('active');
-        });
-
-        // メニュー内のリンクをクリックしたら自動で閉じる
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                hamburgerBtn.classList.remove('active');
-            });
-        });
-    }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const staffCards = document.querySelectorAll('.staff-card');
-    const modal = document.getElementById('profileModal');
-    const modalClose = document.getElementById('modalClose');
-    
-    const modalImg = document.getElementById('modalImg');
-    const modalRole = document.getElementById('modalRole');
-    const modalName = document.getElementById('modalName');
-    const modalCareer = document.getElementById('modalCareer');
-    const modalVision = document.getElementById('modalVision');
-
-    if (!modal || !modalClose || !modalImg || !modalRole || !modalName || !modalCareer || !modalVision) return;
-
-    // カードをクリックしたとき
-    staffCards.forEach(card => {
-        card.addEventListener('click', () => {
-            modalImg.src = card.getAttribute('data-img');
-            modalRole.textContent = card.getAttribute('data-role');
-            modalName.textContent = card.getAttribute('data-name');
-            
-            // ▼ ここを textContent から innerHTML に変更します
-            modalCareer.innerHTML = card.getAttribute('data-career');
-            modalVision.innerHTML = card.getAttribute('data-vision');
-            
-            modal.classList.add('active');
-        });
+document.addEventListener("DOMContentLoaded", () => {
+  const menuButton = document.getElementById("hamburgerBtn");
+  const menu = document.getElementById("navMenu");
+  if (menuButton && menu) {
+    const setMenu = (open) => {
+      menu.classList.toggle("active", open);
+      menuButton.classList.toggle("active", open);
+      menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute(
+        "aria-label",
+        open ? "メニューを閉じる" : "メニューを開く",
+      );
+    };
+    menuButton.addEventListener("click", () =>
+      setMenu(!menu.classList.contains("active")),
+    );
+    menu
+      .querySelectorAll("a")
+      .forEach((link) => link.addEventListener("click", () => setMenu(false)));
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setMenu(false);
     });
-
-    // 閉じるボタンを押したとき
-    modalClose.addEventListener('click', () => {
-        modal.classList.remove('active');
+    document.addEventListener("click", (event) => {
+      if (!menu.contains(event.target) && !menuButton.contains(event.target))
+        setMenu(false);
     });
+  }
 
-    // モーダルの外側（背景）をクリックしたとき
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
+  const modal = document.getElementById("profileModal");
+  const closeButton = document.getElementById("modalClose");
+  const cards = document.querySelectorAll(".staff-card");
+  if (modal && closeButton && cards.length) {
+    const modalImg = document.getElementById("modalImg");
+    const modalRole = document.getElementById("modalRole");
+    const modalName = document.getElementById("modalName");
+    const modalCareer = document.getElementById("modalCareer");
+    const modalVision = document.getElementById("modalVision");
+    let previousFocus = null;
+    const setLineBreakText = (element, value) => {
+      element.replaceChildren();
+      String(value || "")
+        .split(/<br\s*\/?>/i)
+        .forEach((line, index) => {
+          if (index) element.append(document.createElement("br"));
+          element.append(document.createTextNode(line));
+        });
+    };
+    const closeModal = () => {
+      modal.classList.remove("active");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      previousFocus?.focus();
+    };
+    const openModal = (card) => {
+      previousFocus = document.activeElement;
+      modalImg.src =
+        card.querySelector(".player-img-box img")?.getAttribute("src") ||
+        card.dataset.img ||
+        "";
+      modalImg.alt = card.dataset.name || "";
+      modalRole.textContent = card.dataset.role || "";
+      modalName.textContent = card.dataset.name || "";
+      setLineBreakText(modalCareer, card.dataset.career);
+      setLineBreakText(modalVision, card.dataset.vision);
+      modal.classList.add("active");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      closeButton.focus();
+    };
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-labelledby", "modalName");
+    modal.setAttribute("aria-hidden", "true");
+    closeButton.setAttribute("aria-label", "詳細を閉じる");
+    cards.forEach((card) => {
+      card.setAttribute("role", "button");
+      card.setAttribute("tabindex", "0");
+      card.setAttribute("aria-label", card.dataset.name + "の詳細を見る");
+      card.addEventListener("click", () => openModal(card));
+      card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openModal(card);
         }
+      });
     });
-});
-
-// --- スクロールに合わせてロードマップをふわっと表示する処理 ---
-document.addEventListener("DOMContentLoaded", function () {
-    const roadItems = document.querySelectorAll(".road-step-item");
-    const roadSteps = document.querySelector(".road-steps");
-
-    if (roadSteps && roadItems.length > 0 && "IntersectionObserver" in window &&
-        !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        roadSteps.classList.add("animate-road");
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                // 画面内に入ったら
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("is-show");
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            root: null,
-            rootMargin: "0px 0px -50px 0px", // 画面下部から少し手前で発火
-            threshold: 0.1 // 要素が10%見えたら実行
-        });
-
-        roadItems.forEach(item => {
-            observer.observe(item);
-        });
-    }
-});
-
-// --- ページ内リンクのスムーズスクロール（高さのズレ防止付き） ---
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
-        
-        // 「#」だけのときは除外
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            e.preventDefault();
-            
-            // 固定ヘッダーの高さを考慮して少し手前で止める場合（例: 80px）
-            const headerHeight = 80;
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
+    closeButton.addEventListener("click", closeModal);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeModal();
     });
+    modal.addEventListener("keydown", (event) => {
+      if (event.key !== "Tab") return;
+      const focusable = [
+        ...modal.querySelectorAll(
+          'button, a[href], input, [tabindex]:not([tabindex="-1"])',
+        ),
+      ];
+      const first = focusable[0];
+      const last = focusable.at(-1);
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.classList.contains("active"))
+        closeModal();
+    });
+  }
+
+  const filterBar = document.querySelector(".player-filters");
+  const playerGrid = document.querySelector(".player-grid");
+  if (filterBar && playerGrid) {
+    const playerCards = [...playerGrid.querySelectorAll(".player-card")];
+    const count = document.getElementById("playerCount");
+    const updateFilter = (position) => {
+      let visible = 0;
+      playerCards.forEach((card) => {
+        const matches =
+          position === "ALL" ||
+          card.querySelector(".player-position")?.textContent.trim() ===
+            position;
+        card.hidden = !matches;
+        if (matches) visible++;
+      });
+      filterBar
+        .querySelectorAll("button")
+        .forEach((button) =>
+          button.setAttribute(
+            "aria-pressed",
+            String(button.dataset.position === position),
+          ),
+        );
+      if (count) count.textContent = `${visible} PLAYERS`;
+    };
+    filterBar.addEventListener("click", (event) => {
+      const button = event.target.closest("button[data-position]");
+      if (button) updateFilter(button.dataset.position);
+    });
+    updateFilter("ALL");
+  }
+
+  const roadSteps = document.querySelector(".road-steps");
+  if (
+    roadSteps &&
+    "IntersectionObserver" in window &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    roadSteps.classList.add("animate-road");
+    const observer = new IntersectionObserver(
+      (entries, current) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-show");
+            current.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -35px 0px", threshold: 0.08 },
+    );
+    roadSteps
+      .querySelectorAll(".road-step-item")
+      .forEach((item) => observer.observe(item));
+  }
+
+  const form = document.querySelector(".contact-form");
+  if (form) {
+    const positionInputs = form.querySelectorAll('input[name="position"]');
+    positionInputs.forEach((input) =>
+      input.addEventListener("change", () =>
+        positionInputs[0].setCustomValidity(""),
+      ),
+    );
+    form.addEventListener("submit", (event) => {
+      if (![...positionInputs].some((input) => input.checked)) {
+        event.preventDefault();
+        positionInputs[0].setCustomValidity(
+          "希望ポジションを一つ以上選択してください。",
+        );
+        positionInputs[0].reportValidity();
+      } else {
+        positionInputs[0].setCustomValidity("");
+      }
+    });
+  }
 });

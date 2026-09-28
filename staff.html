@@ -4,39 +4,35 @@
     <meta name="description" content="兵庫県伊丹市で活動する社会人サッカーチーム「ASCENSO ITAMI（アセンソ伊丹）」の公式サイトです。兵庫県リーグ昇格を目指し、礼儀と挑戦を大切に活動しています。入団希望・体験参加はこちらから。">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102c27">
+    <link rel="icon" href="image/logo.png">
     <title>選手・スタッフ紹介 | ASCENSO ITAMI 公式サイト</title>
     <!-- Google Fonts (Montserrat) -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
     <!-- CSSファイルの読み込み -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/sample.css">
 </head>
-<body>
+<body class="page-staff">
+  <a class="skip-link" href="#main-content">本文へ移動</a>
 
     <!-- ヘッダー -->
     <header class="header">
-        <div class="logo-area">
-            <!-- ロゴ画像 -->
-            <a href="main.html"><img src="image/logo.png" alt="ASCENSO ITAMI ロゴ" class="logo-img"></a>
-            <div class="team-title">
-                <span class="team-name">ASCENSO ITAMI</span>
-            </div>
-        </div>
-        <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="nav-menu" id="navMenu">
-            <a href="main.html">TOP</a>
-            <a href="about.html">チーム情報</a>
-            <a href="staff.html" class="active">スタッフ/選手紹介</a>
-            <a href="report.html">活動報告</a>
-            <a href="contact.html" class="nav-btn">入団希望者</a>
-        </nav>
-    </header>
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="ASCENSO ITAMI トップページ"><img src="image/logo.png" alt="" width="52" height="52"><span class="brand-type"><strong>ASCENSO</strong><small>ITAMI FOOTBALL CLUB</small></span></a>
+      <button class="hamburger-btn" id="hamburgerBtn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+      <nav class="nav-menu" id="navMenu" aria-label="メインメニュー">
+        <a href="index.html">TOP</a>
+        <a href="about.html">チーム情報</a>
+        <a href="staff.html" aria-current="page">選手・スタッフ</a>
+        <a href="report.html">試合結果</a>
+        <a class="nav-btn" href="contact.html">体験参加する <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
 
     <!-- ページタイトルバナー -->
-    <section class="page-header">
+    <section class="page-header" id="main-content">
         <h1>PLAYERS & STAFF</h1>
         <p>選手・スタッフ紹介</p>
     </section>
@@ -54,11 +50,21 @@
             </div>
 
             <!-- 選手グリッドエリア -->
+            <div class="player-filter-row">
+                <div class="player-filters" role="group" aria-label="ポジションで絞り込み">
+                    <button type="button" data-position="ALL" aria-pressed="true">ALL</button>
+                    <button type="button" data-position="GK" aria-pressed="false">GK</button>
+                    <button type="button" data-position="DF" aria-pressed="false">DF</button>
+                    <button type="button" data-position="MF" aria-pressed="false">MF</button>
+                    <button type="button" data-position="FW" aria-pressed="false">FW</button>
+                </div>
+                <span id="playerCount" class="player-count"></span>
+            </div>
             <div class="player-grid">
                 
                 <!-- #3 -->
                 <div class="player-card">
-                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="村上 天優"></div>
+                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="村上 天優" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#3</span>
                         <h3 class="player-name">村上 天優</h3>
@@ -70,7 +76,7 @@
 
                 <!-- #4 -->
                 <div class="player-card">
-                    <div class="player-img-box"><img src="image/player4.jpg" alt="河岡 朝日"></div>
+                    <div class="player-img-box"><img src="image/player4.jpg" alt="河岡 朝日" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#4</span>
                         <h3 class="player-name">河岡 朝日</h3>
@@ -82,7 +88,7 @@
 
                 <!-- #5 -->
                 <div class="player-card">
-                    <div class="player-img-box"><img src="image/player5.jpg" alt="上田 晃生"></div>
+                    <div class="player-img-box"><img src="image/player5.jpg" alt="上田 晃生" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#5</span>
                         <h3 class="player-name">上田 晃生</h3>
@@ -94,7 +100,7 @@
 
                 <!-- #6 -->
                 <div class="player-card">
-                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="上田 陽也"></div>
+                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="上田 陽也" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#6</span>
                         <h3 class="player-name">上田 陽也</h3>
@@ -106,7 +112,7 @@
 
                 <!-- #7 -->
                 <div class="player-card">
-                    <div class="player-img-box"><img src="image/player7.jpg" alt="山本 桃大"></div>
+                    <div class="player-img-box"><img src="image/player7.jpg" alt="山本 桃大" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#7</span>
                         <h3 class="player-name">山本 桃大</h3>
@@ -118,7 +124,7 @@
 
                 <!-- #8 -->
                 <div class="player-card">
-                    <div class="player-img-box"><img src="image/player8.jpg" alt="岡部 東弥"></div>
+                    <div class="player-img-box"><img src="image/player8.jpg" alt="岡部 東弥" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#8</span>
                         <h3 class="player-name">岡部 東弥</h3>
@@ -130,7 +136,7 @@
 
                 <!-- #9 -->
                 <div class="player-card">
-                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="小勝 響"></div>
+                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="小勝 響" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#9</span>
                         <h3 class="player-name">小勝 響</h3>
@@ -142,7 +148,7 @@
 
                 <!-- #10 -->
                 <div class="player-card">
-                    <div class="player-img-box"><img src="image/player10.jpg" alt="藤井 都詩"></div>
+                    <div class="player-img-box"><img src="image/player10.jpg" alt="藤井 都詩" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#10</span>
                         <h3 class="player-name">藤井 都詩</h3>
@@ -154,7 +160,7 @@
 
                 <!-- #11 -->
                 <div class="player-card">
-                    <div class="player-img-box"><img src="image/player11.jpg" alt="三苫 颯斗"></div>
+                    <div class="player-img-box"><img src="image/player11.jpg" alt="三苫 颯斗" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#11</span>
                         <h3 class="player-name">三苫 颯斗</h3>
@@ -166,7 +172,7 @@
 
                 <!-- #14 -->
                 <div class="player-card">
-                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="億田 宗太郎"></div>
+                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="億田 宗太郎" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#14</span>
                         <h3 class="player-name">億田 宗太郎</h3>
@@ -176,7 +182,7 @@
 
                 <!-- #17 -->
                 <div class="player-card">
-                    <div class="player-img-box"><img src="image/player17.jpg" alt="白川 翔彪"></div>
+                    <div class="player-img-box"><img src="image/player17.jpg" alt="白川 翔彪" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#17</span>
                         <h3 class="player-name">白川 翔彪</h3>
@@ -188,7 +194,7 @@
 
                 <!-- #19 -->
                 <div class="player-card">
-                    <div class="player-img-box"><img src="image/player19.jpg" alt="土田 侑弥"></div>
+                    <div class="player-img-box"><img src="image/player19.jpg" alt="土田 侑弥" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#19</span>
                         <h3 class="player-name">土田 侑弥</h3>
@@ -200,7 +206,7 @@
 
                 <!-- #20 -->
                 <div class="player-card">
-                    <div class="player-img-box"><img src="image/player20.jpg" alt="奥野 聡真"></div>
+                    <div class="player-img-box"><img src="image/player20.jpg" alt="奥野 聡真" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#20</span>
                         <h3 class="player-name">奥野 聡真 <span class="captain-badge">C</span></h3>
@@ -212,7 +218,7 @@
 
                 <!-- #22 -->
                 <div class="player-card">
-                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="越 晴吾"></div>
+                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="越 晴吾" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#22</span>
                         <h3 class="player-name">越 晴吾</h3>
@@ -224,7 +230,7 @@
 
                 <!-- #23 -->
                 <div class="player-card">
-                    <div class="player-img-box"><img src="image/player23.jpg" alt="石渡 柚月"></div>
+                    <div class="player-img-box"><img src="image/player23.jpg" alt="石渡 柚月" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#23</span>
                         <h3 class="player-name">石渡 柚月</h3>
@@ -236,7 +242,7 @@
 
                 <!-- #24 -->
                 <div class="player-card">
-                    <div class="player-img-box"><img src="image/player24.jpg" alt="斧 佳吾"></div>
+                    <div class="player-img-box"><img src="image/player24.jpg" alt="斧 佳吾" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#24</span>
                         <h3 class="player-name">斧 佳吾</h3>
@@ -248,7 +254,7 @@
 
                 <!-- #27 -->
                 <div class="player-card">
-                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="阪本 阿彪"></div>
+                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="阪本 阿彪" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#27</span>
                         <h3 class="player-name">阪本 阿彪</h3>
@@ -260,7 +266,7 @@
 
                 <!-- #28 -->
                 <div class="player-card">
-                    <div class="player-img-box"><img src="image/player28.jpg" alt="岩本 弘"></div>
+                    <div class="player-img-box"><img src="image/player28.jpg" alt="岩本 弘" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#28</span>
                         <h3 class="player-name">岩本 弘</h3>
@@ -272,7 +278,7 @@
 
                 <!-- #29 -->
                 <div class="player-card">
-                    <div class="player-img-box"><img src="image/player29.jpg" alt="赤崎 瑛太"></div>
+                    <div class="player-img-box"><img src="image/player29.jpg" alt="赤崎 瑛太" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#29</span>
                         <h3 class="player-name">赤崎 瑛太</h3>
@@ -284,7 +290,7 @@
 
                 <!-- #30 -->
                 <div class="player-card">
-                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="鶴田 優"></div>
+                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="鶴田 優" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#30</span>
                         <h3 class="player-name">鶴田 優</h3>
@@ -296,7 +302,7 @@
 
                 <!-- #32 -->
                 <div class="player-card">
-                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="小森 瑚太朗"></div>
+                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="小森 瑚太朗" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#32</span>
                         <h3 class="player-name">小森 瑚太朗</h3>
@@ -308,7 +314,7 @@
 
                 <!-- #37 -->
                 <div class="player-card">
-                    <div class="player-img-box"><img src="image/player37.jpg" alt="藤原 光希"></div>
+                    <div class="player-img-box"><img src="image/player37.jpg" alt="藤原 光希" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#37</span>
                         <h3 class="player-name">藤原 光希</h3>
@@ -320,7 +326,7 @@
 
                 <!-- #41 -->
                 <div class="player-card">
-                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="山本 智仁"></div>
+                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="山本 智仁" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#41</span>
                         <h3 class="player-name">山本 智仁</h3>
@@ -332,7 +338,7 @@
 
                 <!-- #67 -->
                 <div class="player-card">
-                    <div class="player-img-box"><img src="image/player67.jpg" alt="井本 健太"></div>
+                    <div class="player-img-box"><img src="image/player67.jpg" alt="井本 健太" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#67</span>
                         <h3 class="player-name">井本 健太</h3>
@@ -344,7 +350,7 @@
 
                 <!-- #77 -->
                 <div class="player-card">
-                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="寶徳 皓丞"></div>
+                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="寶徳 皓丞" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#77</span>
                         <h3 class="player-name">寶徳 皓丞</h3>
@@ -356,7 +362,7 @@
 
                 <!-- #98 -->
                 <div class="player-card">
-                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="青野 楓立"></div>
+                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="青野 楓立" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#98</span>
                         <h3 class="player-name">青野 楓立</h3>
@@ -368,7 +374,7 @@
 
                 <!-- #99 -->
                 <div class="player-card">
-                    <div class="player-img-box"><img src="image/player99.jpg" alt="福本 翔馬"></div>
+                    <div class="player-img-box"><img src="image/player99.jpg" alt="福本 翔馬" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num">#99</span>
                         <h3 class="player-name">福本 翔馬</h3>
@@ -398,7 +404,7 @@
                     data-img="image/player_default.jpg"
                     data-career="2024年3月 兵庫県立伊丹高等学校 卒業<br>2024年4月 同志社大学商学部 入学<br>2025年3月 アセンソ伊丹設立 代表就任"
                     data-vision="サッカーができる環境を用意してくださる、全ての関係者の方々に感謝をし、礼儀の心を持ちながら挑戦し続けるチームを作ります。">
-                    <div class="player-img-box"><img src="image/staff1.jpg" alt="代表"></div>
+                    <div class="player-img-box"><img src="image/staff1.jpg" alt="代表" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num" style="font-size: 14px;">代表</span>
                         <h3 class="player-name">岡部 東弥</h3>
@@ -413,7 +419,7 @@
                     data-img="image/player_default.jpg"
                     data-career="2024年3月 兵庫県立伊丹高等学校 卒業<br>2024年4月 神戸大学理学部 入学<br>2025年3月 アセンソ伊丹設立 副代表就任"
                     data-vision="楽しさと真剣さどちらも追い求めるサッカーチームを作っていきたいと思っています。">
-                    <div class="player-img-box"><img src="image/staff2.jpg" alt="副代表"></div>
+                    <div class="player-img-box"><img src="image/staff2.jpg" alt="副代表" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num" style="font-size: 14px;">副代表</span>
                         <h3 class="player-name">河岡 朝日</h3>
@@ -428,7 +434,7 @@
                     data-img="image/player_default.jpg"
                     data-career="2024年3月 兵庫県立伊丹高等学校 卒業<br>2024年4月 近畿大学文芸学部 入学<br>2025年3月 アセンソ伊丹 監督就任"
                     data-vision="「机上は緻密に、現場は柔軟に」をモットーに、選手と向き合いながらチームを率いています。<br>それぞれの個性を最大限に活かし、全員で成長し続けられるチームを目指します！">
-                    <div class="player-img-box"><img src="image/staff3.jpg" alt="監督"></div>
+                    <div class="player-img-box"><img src="image/staff3.jpg" alt="監督" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num" style="font-size: 14px;">監督</span>
                         <h3 class="player-name">藤井 都詩</h3>
@@ -443,7 +449,7 @@
                     data-img="image/player_default.jpg"
                     data-career="2024年3月 兵庫県立伊丹高等学校 卒業<br>2024年4月 同志社大学商学部 入学<br>2025年3月 アセンソ伊丹設立 経理就任"
                     data-vision="全員が仲良く楽しく、かつ真面目にサッカーに取り組むチームを目指します。">
-                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="経理"></div>
+                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="経理" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num" style="font-size: 14px;">経理</span>
                         <h3 class="player-name">藤木 亮汰</h3>
@@ -453,7 +459,7 @@
 
                 <!-- マネージャー1 -->
                 <div class="player-card">
-                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="マネージャー"></div>
+                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="マネージャー" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num" style="font-size: 14px;">マネージャー</span>
                         <h3 class="player-name">永石 心華</h3>
@@ -463,7 +469,7 @@
 
                 <!-- マネージャー2 -->
                 <div class="player-card">
-                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="マネージャー"></div>
+                    <div class="player-img-box no-image"><img src="image/player_default.jpg" alt="マネージャー" loading="lazy"></div>
                     <div class="player-info">
                         <span class="player-num" style="font-size: 14px;">マネージャー</span>
                         <h3 class="player-name">山名 ゆず葉</h3>
@@ -490,7 +496,7 @@
             
             <!-- トップへ戻るボタン -->
             <div class="back-btn-area" style="margin-top: 60px;">
-                <a href="main.html" class="back-btn">← TOPページに戻る</a>
+                <a href="index.html" class="back-btn">← TOPページに戻る</a>
             </div>
 
         </div>
@@ -504,7 +510,7 @@
             <button class="modal-close" id="modalClose">&times;</button>
             <div class="modal-body">
                 <div class="modal-img-box">
-                    <img id="modalImg" src="" alt="">
+                    <img id="modalImg" alt="">
                 </div>
                 <div class="modal-info">
                     <span id="modalRole" class="modal-role"></span>
@@ -527,5 +533,13 @@
 
     <!-- jsフォルダ内の sample.js を読み込む -->
     <script src="js/sample.js"></script>
+
+<footer class="site-footer">
+  <div class="shell footer-main">
+    <div><a class="footer-brand" href="index.html">ASCENSO<span>ITAMI</span></a><p>伊丹から、もっと高みへ。</p></div>
+    <nav aria-label="フッターメニュー"><a href="about.html">チーム情報</a><a href="staff.html">選手・スタッフ</a><a href="report.html">試合結果</a><a href="contact.html">体験参加</a><a href="https://www.instagram.com/ascenso_itami/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a></nav>
+  </div>
+  <div class="shell footer-bottom"><span>© ASCENSO ITAMI</span><span>RESPECT / CHALLENGE / CONNECTION</span></div>
+</footer>
 </body>
 </html>
