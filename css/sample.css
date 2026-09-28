@@ -116,11 +116,28 @@ h4 {
 .brand {
   gap: 10px;
 }
-.brand img,
 .logo-img {
   width: 48px;
   height: 48px;
   object-fit: contain;
+}
+.brand-mark {
+  position: relative;
+  display: block;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.brand-mark img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 138%;
+  height: auto;
+  max-width: none;
+  transform: translate(-50%, -50%);
 }
 .brand-type {
   display: flex;
@@ -1765,8 +1782,11 @@ h4 {
   .section-pad {
     padding-block: 70px;
   }
-  .brand img,
   .logo-img {
+    width: 42px;
+    height: 42px;
+  }
+  .brand-mark {
     width: 42px;
     height: 42px;
   }
