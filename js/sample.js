@@ -1,4 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const opening = document.getElementById("openingScreen");
+  if (opening) {
+    let closing = false;
+    const dismissOpening = () => {
+      if (closing) return;
+      closing = true;
+      clearTimeout(openingTimer);
+      opening.classList.add("is-leaving");
+      window.setTimeout(() => opening.remove(), 700);
+    };
+    const openingTimer = window.setTimeout(dismissOpening, 3000);
+    opening.addEventListener("click", dismissOpening);
+    opening.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        dismissOpening();
+      }
+    });
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      clearTimeout(openingTimer);
+      opening.remove();
+    }
+  }
+
   const menuButton = document.getElementById("hamburgerBtn");
   const menu = document.getElementById("navMenu");
   if (menuButton && menu) {

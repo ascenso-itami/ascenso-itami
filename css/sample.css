@@ -2038,6 +2038,132 @@ h4 {
     padding: 26px;
   }
 }
+
+/* Opening animation on the top page */
+.opening-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1900;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #18382f;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  animation: opening-enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.opening-screen:focus-visible {
+  outline: 4px solid var(--gold);
+  outline-offset: -8px;
+}
+.opening-screen.is-leaving {
+  animation: opening-leave 0.65s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+.opening-bg {
+  position: absolute;
+  inset: 0;
+  background: url("../image/logo.png") center / min(42vw, 350px) no-repeat;
+  opacity: 0.2;
+}
+.opening-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(90vw, 850px);
+  padding: 35px 20px;
+}
+.opening-kicker,
+.opening-hint {
+  color: var(--gold);
+  font:
+    800 10px Montserrat,
+    sans-serif;
+  letter-spacing: 0.3em;
+}
+.opening-kicker {
+  margin-bottom: 28px;
+}
+.opening-title {
+  font:
+    900 clamp(80px, 15vw, 176px) / 0.72 "Barlow Condensed",
+    sans-serif;
+  letter-spacing: -0.025em;
+  text-shadow: 0 10px 36px rgba(0, 0, 0, 0.2);
+}
+.opening-title em {
+  font-style: normal;
+  color: var(--gold);
+}
+.opening-message {
+  margin-top: 39px;
+  font-size: clamp(15px, 2.1vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+.opening-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+  margin-top: 56px;
+}
+.opening-hint-line {
+  width: 1px;
+  height: 35px;
+  background: var(--gold);
+  animation: opening-line 1.4s ease-in-out infinite;
+}
+@keyframes opening-enter {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes opening-leave {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+@keyframes opening-line {
+  0%,
+  100% {
+    transform: scaleY(0.15);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+@media (max-width: 600px) {
+  .opening-bg {
+    background-size: 240px;
+  }
+  .opening-title {
+    font-size: clamp(73px, 19vw, 115px);
+  }
+  .opening-kicker {
+    font-size: 8px;
+    letter-spacing: 0.2em;
+  }
+  .opening-message {
+    margin-top: 35px;
+    letter-spacing: 0.07em;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .opening-screen,
+  .opening-screen.is-leaving {
+    animation: none;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
