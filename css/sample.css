@@ -1,0 +1,2001 @@
+/* --- 全体の基本設定 --- */
+/* フォントの読み込み定義 */
+html {
+    scroll-behavior: smooth;
+}
+@font-face {
+    font-family: 'Dusha V5';
+    src: url('../fonts/DushaV5-Regular 400.ttf') format('truetype'); /* フォントファイルを置いた場所へのパスに合わせて変更してください */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 一番上のチーム名に適用する */
+.team-name {
+    font-family: 'Dusha V5', sans-serif;
+    letter-spacing: 1px; /* お好みで文字の間隔を調整できます */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    color: #333333;
+    background-color: #FFFFFF;
+    line-height: 1.6;
+}
+
+/* --- JSなしオープニング画面のデザイン --- */
+
+/* 隠しチェックボックス */
+.opening-checkbox {
+    display: none;
+}
+
+/* オープニングの全画面エリア */
+.opening-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2D3D31; /* 深緑 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    cursor: pointer;
+    transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;
+}
+
+/* --- 背景のエンブレムをくっきり見せるデザイン --- */
+.opening-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../image/logo.png');
+    background-size: 350px; /* エンブレムの大きさ（お好みで調整できます） */
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.25; /* 数字を大きくしたので、エンブレムがはっきりと見えます */
+    /* ぼかし（blur）の指定は完全に削除しました */
+}
+
+.opening-content {
+    position: relative;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 0 20px;
+}
+
+.opening-emblem {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.3));
+}
+
+.opening-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+
+.opening-content p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ABA085; /* 金色 */
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+
+/* クリックを促す文字 */
+.scroll-down-hint {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.scroll-down-hint span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    color: #ABA085;
+    letter-spacing: 3px;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 30px;
+    background-color: #ABA085;
+    animation: scrollAnim 1.5s infinite;
+}
+
+@keyframes scrollAnim {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    50.1% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ★チェックボックスにチェックが入ったら（画面がクリックされたら）、オープニングを消す */
+#open-check:checked ~ .opening-screen {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.05);
+    pointer-events: none;
+}
+
+/* --- 上から降りてきて、上に消えるオープニング --- */
+.opening-body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2D3D31;
+}
+
+.opening-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2D3D31;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    cursor: pointer;
+    
+    /* ★始まりの動き：ページを開いた瞬間、上からスッと降りてくる */
+    animation: slideDownIntro 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDownIntro {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* 背景のくっきりエンブレム */
+.opening-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../image/logo.png');
+    background-size: 350px;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+}
+
+.opening-content {
+    position: relative;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 0 20px;
+}
+
+.opening-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+
+.opening-content p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ABA085;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+
+.scroll-down-hint {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.scroll-down-hint span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    color: #ABA085;
+    letter-spacing: 3px;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 30px;
+    background-color: #ABA085;
+    animation: scrollAnim 1.5s infinite;
+}
+
+@keyframes scrollAnim {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    50.1% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ★終わりの動き：クリックまたは3秒経つと、上にスッと吸い込まれるように消える */
+.opening-screen.slide-up {
+    animation: slideUpOut 0.6s cubic-bezier(0.7, 0, 0.84, 0) forwards;
+}
+
+@keyframes slideUpOut {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/* --- ヘッダー --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.team-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: #2D3D31;
+}
+
+/* ナビゲーションメニュー */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-menu a:hover {
+    color: #2D3D31;
+}
+
+/* 現在地を示すマーカー＆ホバー時の下線 */
+.nav-menu a.active::after,
+.nav-menu a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #ABA085;
+    border-radius: 2px;
+}
+
+/* 入団希望者ボタン */
+.nav-btn {
+    background-color: #2D3D31;
+    color: #FFFFFF !important;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px solid #ABA085;
+    transition: opacity 0.3s;
+}
+
+.nav-btn:hover {
+    opacity: 0.85;
+}
+
+.nav-btn::after {
+    display: none !important;
+}
+
+
+/* --- ヒーローセクション（トップの画像部分） --- */
+.hero {
+    height: 500px;
+    margin-top: 70px;
+    background-image: linear-gradient(rgba(45, 61, 49, 0.5), rgba(45, 61, 49, 0.5)), url('../image/top1.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.hero-content h1 {
+    font-size: 56px; /* 40pxから大きく変更（スマホでは自動で調整させることもできます） */
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+}
+
+.hero-content p {
+    font-size: 22px; /* 18pxから大きく変更 */
+    font-weight: 600; /* 少し太字にして読みやすく */
+    color: #ABA085;
+    letter-spacing: 1px;
+}
+
+
+/* --- トップページの理念ダイジェスト --- */
+.top-concept-section {
+    padding: 80px 20px;
+    background-color: #F9F9F8;
+    text-align: center;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.top-concept-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.concept-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: #ABA085;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.top-concept-inner h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #2D3D31;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.top-concept-inner p {
+    font-size: 15px;
+    color: #4B5563;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.top-about-link a {
+    color: #2D3D31;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 2px solid #ABA085;
+    padding-bottom: 4px;
+    transition: opacity 0.3s;
+}
+
+.top-about-link a:hover {
+    opacity: 0.7;
+}
+
+
+/* --- 基本情報セクション --- */
+.info-section {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-top: 4px solid #2D3D31;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.info-row {
+    display: flex;
+    padding: 16px 0;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    width: 150px;
+    font-weight: 700;
+    color: #2D3D31;
+}
+
+.info-value {
+    flex: 1;
+    color: #4B5563;
+}
+
+.info-note {
+    display: block;
+    font-size: 13px;
+    color: #666666;
+    margin-top: 6px;
+}
+
+.info-link {
+    color: #2D3D31;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.info-link:hover {
+    color: #ABA085;
+}
+
+
+/* --- セクション見出し --- */
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #2D3D31;
+    letter-spacing: 2px;
+}
+
+.section-title p {
+    font-size: 14px;
+    color: #ABA085;
+    margin-top: 4px;
+    letter-spacing: 1px;
+}
+
+
+/* --- ページヘッダー（下層ページ用） --- */
+.page-header {
+    height: 250px;
+    margin-top: 70px;
+    background-color: #2D3D31;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.page-header p {
+    font-size: 14px;
+    color: #ABA085;
+    letter-spacing: 1px;
+}
+
+
+/* --- 共通ボタン類 --- */
+.back-btn-area {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #2D3D31;
+    color: #FFFFFF;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: opacity 0.3s;
+}
+
+.back-btn:hover {
+    opacity: 0.8;
+}
+
+
+/* --- 選手一覧ページ用のデザイン --- */
+.roster-section {
+    padding: 60px 20px;
+    background-color: #FFFFFF;
+}
+
+.roster-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.player-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.player-card {
+    background-color: #F9F9F8;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+}
+
+.player-img-box {
+    width: 100%;
+    height: 180px;
+    background-color: #E5E7EB;
+    overflow: hidden;
+}
+
+.player-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.player-info {
+    padding: 15px 10px;
+}
+
+.player-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    color: #ABA085;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.player-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2D3D31;
+    margin-bottom: 6px;
+}
+
+.player-birth,
+.player-school {
+    font-size: 13px;
+    color: #4B5563;
+    line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+    .player-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .player-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- チーム理念ページ（about.html）用の追加デザイン --- */
+
+/* コンセプト全体の囲み */
+.about-content {
+    padding: 60px 20px;
+    background-color: #FFFFFF;
+}
+
+.concept-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* メイン理念の見出し部分 */
+.concept-catch {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #ABA085; /* 金色のライン */
+}
+
+.concept-catch h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #2D3D31;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.concept-catch p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4B5563;
+    line-height: 1.8;
+}
+
+/* 本文のデザイン */
+.concept-body p {
+    font-size: 15px;
+    color: #333333;
+    line-height: 2;
+    margin-bottom: 25px;
+}
+
+/* 各サブセクション（沿革・ユニフォーム・グラウンド等） */
+.about-section-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    color: #ABA085; /* 金色 */
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.about-sub-section {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #E5E7EB;
+}
+
+.about-sub-section h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #2D3D31;
+    margin-bottom: 15px;
+}
+
+.about-sub-section p {
+    font-size: 15px;
+    color: #4B5563;
+    line-height: 1.8;
+}
+
+/* 沿革（ヒストリー）のリスト */
+.history-list {
+    list-style: none;
+    margin-top: 20px;
+    padding-left: 0;
+}
+
+.history-list li {
+    position: relative;
+    padding-left: 90px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #4B5563;
+}
+
+.history-list li span {
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: #2D3D31;
+    background-color: #F3F4F6;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    text-align: center;
+    width: 75px;
+}
+
+/* 画像プレースホルダー（仮枠） */
+.image-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #F3F4F6;
+    border: 2px dashed #ABA085;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: #6B7280;
+    font-weight: 600;
+}
+
+/* ガイドラインのリスト */
+.guideline-list {
+    margin-top: 15px;
+    padding-left: 20px;
+    color: #4B5563;
+}
+
+.guideline-list li {
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* --- エンブレム & ユニフォーム紹介エリアのデザイン --- */
+.emblem-display-area {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: #F9F9F8;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.about-emblem-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: #2D3D31; /* 背景にチームカラーの深緑を敷く */
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.emblem-description h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: #2D3D31;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.emblem-description p {
+    font-size: 14px;
+    color: #4B5563;
+    line-height: 1.7;
+}
+
+/* ユニフォーム画像のギャラリー表示 */
+.uniform-gallery {
+    display: flex;
+    gap: 20px;
+    margin-top: 25px;
+    justify-content: center;
+    flex-wrap: wrap; /* スマホで縦並びに自動切り替え */
+}
+
+.uniform-item {
+    flex: 1;
+    min-width: 280px;
+    background-color: #F9F9F8;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+    text-align: center;
+}
+
+.uniform-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+}
+
+.uniform-label {
+    margin-top: 10px;
+    font-weight: 700;
+    color: #2D3D31;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* スマホで見やすく縦並びにする設定 */
+@media (max-width: 768px) {
+    .emblem-display-area {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* --- お問い合わせ・体験参加ページ（contact.html）用のデザイン --- */
+
+.contact-section {
+    padding: 60px 20px;
+    background-color: #FFFFFF;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-block {
+    margin-top: 50px;
+}
+
+.contact-sub-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #2D3D31;
+    margin-bottom: 20px;
+    padding-left: 12px;
+    border-left: 4px solid #ABA085;
+}
+
+/* 体験参加の流れ（ステップ表示） */
+.flow-steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.flow-step {
+    background-color: #F9F9F8;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+}
+
+.step-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    color: #ABA085;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.flow-step h4 {
+    font-size: 16px;
+    color: #2D3D31;
+    margin-bottom: 8px;
+}
+
+.flow-step p {
+    font-size: 13px;
+    color: #4B5563;
+    line-height: 1.6;
+}
+
+/* SNSダイレクト連絡ボックス */
+.sns-contact-box {
+    background-color: #2D3D31;
+    color: #FFFFFF;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.sns-contact-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.sns-contact-box p {
+    font-size: 14px;
+    color: #E5E7EB;
+    margin-bottom: 20px;
+}
+
+.sns-btn {
+    display: inline-block;
+    background-color: #ABA085;
+    color: #FFFFFF;
+    font-weight: 700;
+    padding: 10px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.sns-btn:hover {
+    opacity: 0.85;
+}
+
+/* フォームデザイン */
+.contact-form {
+    background-color: #F9F9F8;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    color: #2D3D31;
+    margin-bottom: 8px;
+}
+
+.required {
+    background-color: #ABA085;
+    color: #FFFFFF;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 6px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="number"],
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #D1D5DB;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #FFFFFF;
+    font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #2D3D31;
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.submit-btn {
+    background-color: #2D3D31;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.submit-btn:hover {
+    opacity: 0.85;
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+    .flow-steps {
+        grid-template-columns: 1fr;
+    }
+}
+/* --- 複数選択チェックボックスのデザイン --- */
+.checkbox-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    background-color: #FFFFFF;
+    padding: 12px 15px;
+    border: 1px solid #D1D5DB;
+    border-radius: 4px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #2D3D31;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #2D3D31; /* チェックボックスの色を深緑に合わせる */
+    cursor: pointer;
+}
+
+/* --- 姓・名を横並びにするデザイン --- */
+.name-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.name-inputs input {
+    flex: 1; /* 左右の幅を半分ずつ綺麗に分ける */
+}
+
+/* スマホの画面幅が狭いときは縦並びにする場合（必要に応じて） */
+@media (max-width: 480px) {
+    .name-inputs {
+        flex-direction: column;
+    }
+}
+
+/* --- クラブ情報下のInstagram誘導バナー --- */
+.insta-banner-section {
+    max-width: 800px;
+    margin: 40px auto 0 auto; /* 上部の基本情報カードとの間隔を調整 */
+    padding: 0 20px;
+}
+
+.insta-banner-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #2D3D31; /* チームの深緑 */
+    color: #FFFFFF;
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: 1px solid #ABA085; /* 金色のアクセント枠線 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.insta-banner-card:hover {
+    opacity: 0.9;
+    transform: translateY(-3px); /* マウスを乗せたときに少し浮き上がる */
+}
+
+.insta-banner-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #ABA085; /* 金色のインスタアイコン */
+    flex-shrink: 0;
+}
+
+.insta-banner-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.insta-banner-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    color: #ABA085; /* 金色 */
+    letter-spacing: 2px;
+    margin-bottom: 2px;
+}
+
+.insta-banner-main {
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+/* --- ヒーローセクションのスマホ用文字サイズ調整 --- */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 36px; /* スマホでは少し控えめな大きさに調整 */
+    }
+    .hero-content p {
+        font-size: 16px;
+    }
+}
+/* --- 圧倒的な熱量を伝える情熱バナー（1行すっきり調整版） --- */
+.concept-passion-banner {
+    position: relative;
+    margin: 35px 0;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #2D3D31 0%, #1A241C 100%);
+    border: 2px solid #ABA085;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(45, 61, 49, 0.2);
+    text-align: center;
+    overflow: hidden;
+}
+
+.passion-sub {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    color: #ABA085;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+}
+
+.concept-passion-banner p {
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    color: #FFFFFF !important;
+    letter-spacing: 1.5px;
+    margin: 0 !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+}
+
+/* スマホなど画面が狭いときは、文字サイズを縮小して1行にキープする */
+@media (max-width: 768px) {
+    .concept-passion-banner {
+        padding: 22px 10px;
+    }
+    .concept-passion-banner p {
+        font-size: 16px !important;
+    }
+}
+
+/* ========================================
+   HISTORY & GOAL
+======================================== */
+
+.history-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 15px 0 0 0 !important;
+}
+
+
+/* 1行全体 */
+.history-list li {
+    display: grid !important;
+    grid-template-columns: 110px 1fr !important;
+    column-gap: 20px !important;
+
+    width: 100% !important;
+
+    padding: 12px 0 !important;
+    margin: 0 !important;
+
+    border-bottom: 1px solid #E5E7EB !important;
+
+    box-sizing: border-box !important;
+
+    align-items: start !important;
+}
+
+
+/* ========================================
+   年月
+======================================== */
+
+.history-list li .history-date {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+
+    display: block !important;
+
+    width: 110px !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 6px 8px !important;
+
+    box-sizing: border-box !important;
+
+    background-color: #F3F4F6 !important;
+
+    border-radius: 4px !important;
+
+    color: #2D3D31 !important;
+
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+
+    text-align: center !important;
+
+    white-space: nowrap !important;
+
+    position: static !important;
+    float: none !important;
+}
+
+
+/* ========================================
+   内容
+======================================== */
+
+.history-list li .history-content {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+
+    display: block !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 5px 0 !important;
+
+    box-sizing: border-box !important;
+
+    background: transparent !important;
+    background-color: transparent !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+
+    color: #333 !important;
+
+    font-family: inherit !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+
+    text-align: left !important;
+
+    white-space: normal !important;
+    word-break: break-word !important;
+
+    position: static !important;
+    float: none !important;
+}
+
+
+/* ========================================
+   スマホ
+======================================== */
+
+@media (max-width: 600px) {
+
+    .history-list li {
+        grid-template-columns: 95px 1fr !important;
+        column-gap: 10px !important;
+    }
+
+    .history-list li .history-date {
+        width: 95px !important;
+        font-size: 13px !important;
+        padding: 5px 4px !important;
+    }
+
+    .history-list li .history-content {
+        font-size: 14px !important;
+        padding-top: 4px !important;
+    }
+}
+
+/* スマホ固定ボタン */
+.floating-contact-btn {
+    display: none; /* PCでは非表示 */
+    position: fixed;
+    bottom: 20px;
+    left: 5%;
+    width: 90%;
+    background-color: #2D3D31;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 15px 0;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+@media (max-width: 768px) {
+    .floating-contact-btn { display: block; }
+}
+
+/* --- ヘッダー全体のレイアウト --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #FFFFFF;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.team-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: #2D3D31;
+}
+
+/* --- PC用メニューのスタイル --- */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #2D3D31;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #ABA085;
+}
+
+/* 入団希望ボタン（メニュー内） */
+.nav-menu .nav-btn {
+    background-color: #2D3D31;
+    color: #FFFFFF !important;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+/* PCではハンバーガーボタンを非表示 */
+.hamburger-btn {
+    display: none;
+}
+
+
+/* --- スマホ表示（画面幅が768px以下の場合） --- */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 20px;
+    }
+
+    /* スマホのときだけハンバーガーボタンを表示 */
+    .hamburger-btn {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        position: relative;
+        z-index: 10000;
+    }
+
+    .hamburger-btn span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background-color: #2D3D31;
+        margin: 5px 0;
+        transition: 0.3s;
+        pointer-events: none;
+    }
+
+    /* 通常時はメニューを画面の右側外へ隠す */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background-color: #FFFFFF;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: 0.4s ease;
+        z-index: 9999;
+    }
+
+    /* メニューが開いたときの状態 */
+    .nav-menu.active {
+        right: 0;
+    }
+
+    /* スマホメニュー内の文字設定＆初期は少し下へ隠す */
+    .nav-menu a {
+        font-size: 18px;
+        margin: 15px 0;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* メニューに .active がついたときに、順番にふんわり表示させる */
+    .nav-menu.active a {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* 1つずつ少し遅らせて出現させる */
+    .nav-menu.active a:nth-child(1) { transition-delay: 0.1s; }
+    .nav-menu.active a:nth-child(2) { transition-delay: 0.15s; }
+    .nav-menu.active a:nth-child(3) { transition-delay: 0.2s; }
+    .nav-menu.active a:nth-child(4) { transition-delay: 0.25s; }
+    .nav-menu.active a:nth-child(5) { transition-delay: 0.3s; }
+
+    /* バツ印に変形するアニメーション */
+    .hamburger-btn.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-btn.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
+
+
+/* スマホ表示のときに見出しと内容のレイアウトを縦並びにして崩れを防ぐ */
+@media (max-width: 768px) {
+    /* 募集要項の部分（テーブルやリストなど）をスマホで縦積みにする調整 */
+    .cost-table, .cost-table tr, .cost-table th, .cost-table td {
+        display: block;
+        width: 100% !important;
+    }
+    
+    .cost-table th {
+        border-bottom: none !important;
+        padding-bottom: 4px !important;
+    }
+    
+    .cost-table td {
+        padding-top: 0 !important;
+        margin-bottom: 10px;
+    }
+
+    /* 参加資格などの小見出し（h4）が狭くなって縦折れするのを防ぐ */
+    .about-sub-section h4 {
+        width: 100% !important;
+        word-break: break-all;
+    }
+}
+
+
+
+
+/* 画像ボックスを相対位置指定にする */
+.player-img-box {
+    position: relative;
+    background-color: #eee; /* 画像読み込み前やない場合の背景色 */
+}
+
+/* デフォルト画像（player_default.jpg）のとき、あるいは画像がない場合に「NO IMAGE」を表示するクラス */
+/* ※HTML側でクラスを付与するか、下記のようにCSSで工夫できます */
+.player-img-box.no-image::after {
+    content: "NO IMAGE";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* 少し暗くする */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* --- モーダル（ポップアップ）のスタイル --- */
+.modal-overlay {
+    display: none; /* 初期状態は非表示 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal-overlay.active {
+    display: flex; /* アクティブ時に表示 */
+}
+
+.modal-content {
+    background: #fff;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    animation: modalOpen 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@keyframes modalOpen {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .modal-body {
+        flex-direction: row;
+    }
+}
+
+.modal-img-box {
+    width: 100%;
+    max-width: 200px;
+    height: 240px; /* ★ここで高さを固定します（好みに合わせて200px〜260pxなどで調整してください） */
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #eee;
+}
+
+.modal-img-box img {
+    width: 100%;
+    height: 100%; /* ★高さを100%にしてボックスいっぱいに広げます */
+    display: block;
+    object-fit: cover; /* ★これで画像が変形せずに枠の大きさに綺麗にトリミングされます */
+    object-position: center; /* ★画像の中央を表示する */
+}
+
+.modal-info {
+    flex: 1;
+}
+
+.modal-role {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2c3e50;
+    background: #e2e8f0;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.modal-name {
+    margin: 10px 0 15px 0;
+    font-size: 22px;
+    color: #111;
+}
+
+.modal-text-section {
+    margin-bottom: 15px;
+}
+
+.modal-text-section h4 {
+    font-size: 14px;
+    color: #555;
+    border-left: 3px solid #2c3e50;
+    padding-left: 8px;
+    margin-bottom: 5px;
+}
+
+.modal-text-section p {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* クリックできるカードにホバー効果をつける */
+.staff-card {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.staff-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* ポジション表示のスタイル（他のプロフィールテキストと統一） */
+.player-info .player-position {
+    font-size: 13px;       /* 生年月日や出身高校と同じ文字サイズに調整 */
+    color: #666;           /* 他のテキストと同じ文字色に */
+    margin-top: 4px;       /* 上の要素との間隔 */
+    font-weight: normal;   /* 太字にしない場合はnormal */
+}
+
+/* キャプテンマークのスタイル */
+.captain-badge {
+    display: inline-block;
+    background-color: #FFCE1F; /* チームカラーやアクセントカラー */
+    color: #111;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+/* --- 活動報告（試合結果アコーディオン）用のスタイル --- */
+.match-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.match-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 12px;
+}
+
+.match-summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #2D3D31;
+    outline: none;
+}
+
+/* 日付と試合種別 */
+.match-date-type {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+/* ★変更：スコアエリアをCSS Gridにして、左右のチーム名と真ん中のスコアの列幅を固定する */
+.match-score-area {
+    display: grid;
+    grid-template-columns: 1fr 140px 1fr; /* [左チーム] [中央のスコア幅を固定] [右チーム] */
+    align-items: center;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* 左側のチーム名を右寄せにする（スコア側に寄せる） */
+.match-score-area .team-home {
+    text-align: right;
+    padding-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 右側のチーム名を左寄せにする（スコア側に寄せる） */
+.match-score-area .team-away {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* スコアとラベルをまとめた箱（中央列に配置される） */
+.score-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* 試合結果の文字（WIN / DRAW / LOSE） */
+.result-label {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+/* 勝利：赤文字 */
+.result-label.win {
+    color: #DC2626;
+}
+
+/* 引き分け・敗戦：黒文字 */
+.result-label.draw,
+.result-label.lose {
+    color: #111827;
+}
+
+/* スコア数字のサイズ */
+.match-score-area .score-num {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 開催場所 */
+.match-location {
+    font-size: 12px;
+    color: #888;
+    margin-top: 6px;
+}
+
+.match-details {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.match-comment {
+    margin-top: 10px;
+}
+/* --- スマホ表示のとき（画面幅が768px以下の場合） --- */
+@media (max-width: 768px) {
+    .match-card {
+        padding: 15px 12px;
+    }
+
+    /* スマホではスコアの数字を少し大きく迫力を出す場合 */
+    .match-score-area .score-num {
+        font-size: 20px; 
+    }
+}
+
+
+/* --- ヒーローセクション（スライドショー） --- */
+.hero.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 70vh; /* 高さは必要に応じて調整してください */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+}
+
+/* スライドショーの背景コンテナ */
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* 各スライド（背景画像）のベース設定 */
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: heroSlideAnimation 15s infinite;
+}
+
+/* 3枚の画像を順番にフェード切り替え（枚数に合わせて調整可能） */
+.hero-slide:nth-child(1) { animation-delay: 0s; }
+.hero-slide:nth-child(2) { animation-delay: 5s; }
+.hero-slide:nth-child(3) { animation-delay: 10s; }
+
+@keyframes heroSlideAnimation {
+    0% { opacity: 0; transform: scale(1); }
+    8% { opacity: 1; }
+    33% { opacity: 1; }
+    41% { opacity: 0; transform: scale(1.05); }
+    100% { opacity: 0; }
+}
+
+/* 写真を引き立たせるための暗めのオーバーレイ */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 2;
+}
+
+/* テキストコンテンツが背景に埋もれないように最前面へ */
+.hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+/* --- くねくねロードマップのスタイル --- */
+.winding-road-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto 20px;
+    padding: 20px 0;
+}
+
+/* 背景のくねくねSVG道 */
+.road-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.road-path {
+    fill: none;
+    stroke: #d1d5db; /* 道の色（薄いグレー） */
+    stroke-width: 6;
+    stroke-dasharray: 8 6; /* 点線風 */
+    stroke-linecap: round;
+}
+
+/* ステップのコンテナ */
+.road-steps {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 55px; /* 各項目の間隔 */
+}
+
+/* 各項目のベース設定 */
+.road-step-item {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* 1番目・3番目・5番目・7番目（左側に吹き出し） */
+.road-step-item.align-left {
+    justify-content: flex-start;
+    padding-left: 5%;
+}
+
+/* 2番目・4番目・6番目・8番目（右側に吹き出し） */
+.road-step-item.align-right {
+    justify-content: flex-end;
+    padding-right: 5%;
+}
+
+/* コンテンツの吹き出しボックス */
+.road-content-bubble {
+    background: #ffffff;
+    border: 2px solid #2D3D31;
+    padding: 10px 14px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    width: 65%; /* 吹き出しの幅 */
+    position: relative;
+}
+
+/* 点（ピン）は非表示にするため削除・無効化 */
+.road-pin {
+    display: none;
+}
+
+/* 未来・目標ゾーンのスタイル（色変化） */
+.goal-step .road-content-bubble {
+    border-color: #C5A059;
+    background: #fffbeb;
+}
+
+/* 日付タグとテキスト */
+.road-date {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    color: #2D3D31;
+    background: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+.future-tag {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.road-text {
+    font-size: 13px;
+    color: #1f2937;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* --- スクロール連動フェードインのアニメーション設定 --- */
+.road-step-item {
+    opacity: 0;
+    transform: translateY(30px); /* 最初は少し下に下げておく */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* スクロールして画面内に入ると付与されるクラス */
+.road-step-item.is-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 順番にふわっと出したい場合の時間差（オプション） */
+.road-step-item:nth-child(1) { transition-delay: 0.1s; }
+.road-step-item:nth-child(2) { transition-delay: 0.2s; }
+.road-step-item:nth-child(3) { transition-delay: 0.3s; }
+.road-step-item:nth-child(4) { transition-delay: 0.4s; }
+.road-step-item:nth-child(5) { transition-delay: 0.5s; }
+.road-step-item:nth-child(6) { transition-delay: 0.6s; }
+.road-step-item:nth-child(7) { transition-delay: 0.7s; }
+.road-step-item:nth-child(8) { transition-delay: 0.8s; }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="description" content="兵庫県伊丹市で活動する社会人サッカーチーム「ASCENSO ITAMI（アセンソ伊丹）」の公式サイトです。兵庫県リーグ昇格を目指し、礼儀と挑戦を大切に活動しています。入団希望・体験参加はこちらから。">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCENSO ITAMI 公式サイト</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/sample.css">
+</head>
+<body class="opening-body" onclick="goMain();">
+
+    <!-- オープニング画面 -->
+    <div class="opening-screen" id="openingScreen">
+        <div class="opening-bg"></div>
+        <div class="opening-content">
+            <h1>ASCENSO ITAMI</h1>
+            <p>もう一度熱いサッカーを！</p>
+            <div class="scroll-down-hint">
+                <span>CLICK OR WAIT</span>
+                <div class="scroll-line"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goMain() {
+            const screen = document.getElementById('openingScreen');
+            screen.classList.add('slide-up');
+            setTimeout(function() {
+                window.location.href = 'main.html';
+            }, 600);
+        }
+
+        setTimeout(function() {
+            goMain();
+        }, 3000);
+    </script>
+</body>
+</html>
