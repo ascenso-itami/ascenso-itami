@@ -1,0 +1,47 @@
+.opening-body .opening-screen {
+    height: 100dvh;
+}
+
+.opening-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.opening-link:focus-visible {
+    outline: 3px solid #ABA085;
+    outline-offset: -8px;
+}
+
+.opening-body .opening-content h1 {
+    font-family: 'Dusha V5', sans-serif;
+    font-size: clamp(28px, 7.5vw, 72px);
+    font-weight: 400;
+    font-synthesis: none;
+    letter-spacing: .025em;
+    white-space: nowrap;
+}
+
+.opening-body .opening-content p {
+    font-size: clamp(14px, 3.5vw, 20px);
+    letter-spacing: .05em;
+    margin-bottom: 0;
+}
+
+.opening-body .scroll-down-hint {
+    position: static;
+    margin-top: 40px;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .opening-body .opening-screen,
+    .opening-body .scroll-line {
+        animation: none;
+        transition: none;
+    }
+}

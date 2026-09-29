@@ -3,40 +3,42 @@
 <head>
     <meta name="description" content="兵庫県伊丹市で活動する社会人サッカーチーム「ASCENSO ITAMI（アセンソ伊丹）」の活動報告・試合結果一覧です。">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>活動報告・試合結果 | ASCENSO ITAMI 公式サイト</title>
     <!-- Google Fonts (Montserrat) -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
     <!-- CSSファイルの読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/sample.css">
+  <link rel="stylesheet" href="css/site-shell.css">
+  <meta name="theme-color" content="#101b17">
 </head>
-<body>
+<body class="site-page page-journal has-site-shell">
 
     <!-- ヘッダー -->
-    <header class="header">
-        <div class="logo-area">
-            <a href="main.html"><img src="image/logo.png" alt="ASCENSO ITAMI ロゴ" class="logo-img"></a>
-            <div class="team-title">
-                <span class="team-name">ASCENSO ITAMI</span>
-            </div>
-        </div>
-        <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="nav-menu" id="navMenu">
-            <a href="main.html">TOP</a>
-            <a href="about.html">チーム情報</a>
-            <a href="staff.html">スタッフ/選手紹介</a>
-            <a href="report.html" class="active">活動報告</a>
-            <a href="contact.html" class="nav-btn">入団希望者</a>
-        </nav>
-    </header>
+    <header class="global-header">
+    <a class="global-brand" href="index.html" aria-label="ASCENSO ITAMI オープニングを再生">
+      <span class="global-logo"><img src="image/logo.png" alt="" width="1135" height="1150"></span>
+      <span class="global-brand-name">ASCENSO ITAMI</span>
+    </a>
+    <button class="global-menu-toggle" id="hamburgerBtn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="navMenu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+    <nav class="global-nav" id="navMenu" aria-label="メインナビゲーション">
+      <a href="main.html">TOP</a>
+      <a href="about.html">チーム情報</a>
+      <a href="staff.html">選手・スタッフ</a>
+      <a href="report.html" aria-current="page">活動報告</a>
+      <a href="contact.html" class="global-nav-join">入団希望者</a>
+    </nav>
+    <button class="global-menu-backdrop" id="menuBackdrop" type="button" aria-label="メニューを閉じる" tabindex="-1" hidden></button>
+  </header>
 
     <!-- ページタイトルバナー -->
     <section class="page-header">
-        <h1>MATCH & REPORT</h1>
+        <h1><span class="copy-unit">MATCH</span> <span class="copy-unit">&amp; REPORT</span></h1>
         <p>活動報告・試合結果</p>
     </section>
 
@@ -50,14 +52,14 @@
             </div>
 
     <h3>2026年09月</h3>
-        <details class="match-card">
+        <details class="match-card" id="match-20260920">
             <summary class="match-summary">
                 <div class="match-date-type">2026.09.20（日） ｜北摂C1リーグ 第4節 </div>
                 <div class="match-score-area">
                     <span class="team-home">ascenso itami</span>
                     <div class="score-box">
                         <span class="result-label win">WIN</span>
-                        <span class="score-num">5 - 1</span>
+                        <span class="score-num">7 - 0</span>
                     </div>
                     <span class="team-away">宝塚FC</span>
                 </div>
@@ -70,7 +72,7 @@
                     ・得点者：斧 佳吾×3、赤﨑 瑛太、山本 桃大、岡部 東弥、 白川 翔彪<br>
                     ・アシスト：岩本 弘、河岡 朝日、 山本 桃大、 藤原 光希、越 晴吾、 藤井 都詩
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>相手の人数が９人なこともありゴールラッシュとなりました！それと同時に課題が残る試合ともなりました。</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>相手が9人という状況もあり、7得点で勝利しました。得点を重ねる一方で、課題も残りました。</p>
             </div>
         </details>
 
@@ -96,7 +98,7 @@
                     ・得点者：岡部 東弥、赤﨑 瑛太、奥野 聡真、斧 佳吾、越 晴吾<br>
                     ・アシスト：億田 宗太郎（2）、奥野 聡真
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>多彩な得点者によるゴールラッシュとなり、守備陣も要所を締めて5-1の快勝を収めました！チーム全体の連動が光る素晴らしいゲームでした。</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>5人がそれぞれ得点し、5-1で勝利しました。守備でも要所を抑えることができました。</p>
             </div>
         </details>
 
@@ -121,7 +123,7 @@
                     ・得点者：奥野 聡真<br>
                     ・アシスト：斧 佳吾
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>公式戦第3節は奥野選手のゴール（アシスト:斧）で先制するも決定力を欠き追加点が奪えず、終盤にカウンターから失点しもったいない試合となりました。</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>奥野選手のゴール（アシスト：斧選手）で先制しましたが、追加点を奪えず、終盤にカウンターから失点。公式戦第3節は1-1の引き分けでした。</p>
             </div>
         </details>
 
@@ -146,7 +148,7 @@
                     ・得点者：上田 晃生、億田 宗太郎<br>
                     ・アシスト：奥野 聡真、越 晴吾
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>公式戦第2節も堅い守備でゴールを許さず、上田選手と億田選手のゴールでしっかりとリードを守り抜いて見事な連勝を飾りました！</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>上田選手と億田選手のゴールで2-0の勝利。公式戦第2節も無失点で終え、連勝となりました。</p>
             </div>
         </details>
         <details class="match-card">
@@ -169,7 +171,7 @@
                     ・得点者：赤﨑 瑛太、奥野 聡真（2）、三苫 颯斗、岩本 弘<br>
                     ・アシスト：藤原 光希、白川 翔彪、斧 佳吾
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>記念すべき公式戦初戦！攻守がかみ合い、相手に隙を与えない完璧な試合運びで見事なクリーンシート大勝を飾りました！幸先の良いスタートとなりました！</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>初めての公式戦は5-0で勝利しました。攻守がかみ合い、無失点でスタートを切ることができました。</p>
             </div>
         </details>
         <details class="match-card">
@@ -192,7 +194,7 @@
                     ・得点者：白川 翔彪、奥野 聡真（2）<br>
                     ・アシスト：岡部 東弥、赤﨑 瑛太
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>白川選手のゴールを皮切りに、奥野選手のマルチゴールで突き放し、見事に白熱したトレーニングマッチを勝利で飾りました！</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>白川選手の先制点に続き、奥野選手が2得点。トレーニングマッチを3-2で終えました。</p>
             </div>
         </details>
 
@@ -217,7 +219,7 @@
                     ・得点者：億田 宗太郎、斧 佳吾、赤﨑 瑛太<br>
                     ・アシスト：上田 晃生
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>一進一退の攻防が続く中、億田選手、斧選手、赤﨑選手のゴールで着実に得点を重ね、見事に競り勝って勝利を収めました！</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>億田選手、斧選手、赤﨑選手が得点。一進一退の展開でしたが、3-2で競り勝ちました。</p>
             </div>
         </details>
         <details class="match-card">
@@ -240,7 +242,7 @@
                     ・得点者：小勝 響、GUEST、赤﨑 瑛太<br>
                     ・アシスト：岡部 東弥
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>白熱したシーソーゲームとなりましたが、終盤まで集中を切らさずゴールを重ね、見事に1点差の勝利を掴み取りました！</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>点を取り合う展開になりました。最後まで集中を切らさず、3-2で勝利しました。</p>
             </div>
         </details>
 
@@ -265,7 +267,7 @@
                     ・得点者：岡部 東弥、越 晴吾<br>
                     ・アシスト：藤原 光希
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>お互いに一歩も譲らない展開の中、岡部選手と越選手のゴール、藤原選手のアシストなど要所でチャンスをモノにし、見応えのあるドローとなりました！</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>岡部選手と越選手が得点し、2-2の引き分け。互いに譲らない試合となりました。</p>
             </div>
         </details>
         <details class="match-card">
@@ -288,7 +290,7 @@
                     ・得点者：藤井 都詩、GUEST<br>
                     ・アシスト：赤﨑 瑛太、岡部 東弥
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>守備陣が相手の攻撃を無失点に抑え、要所を突いた効果的な得点で危なげなく勝利を収めることができました！</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>藤井選手とゲスト選手の得点で2-0の勝利。守備でも最後までゴールを許しませんでした。</p>
             </div>
         </details>
 
@@ -313,7 +315,7 @@
                     ・得点者：斧 佳吾（5）、赤﨑 瑛太（4）、奥野 聡真（2）、岩本 弘（2）、越 晴吾（2）、阪本 阿彪、藤井 都詩、オウンゴール<br>
                     ・アシスト：上田（3）、阪本（3）、河岡（2）、岩本（2）、岡部（2）、藤原、奥野
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>攻撃の手を緩めることなくゴールラッシュとなり、見事なクリーンシートでの大勝となりました！選手それぞれの連係や連動した崩しが光る圧巻のゲームでした。</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>連係から得点を重ね、18-0で勝利しました。守備も無失点で終えました。</p>
             </div>
         </details>
 
@@ -338,7 +340,7 @@
                     ・得点者：赤﨑 瑛太（2）<br>
                     ・アシスト：無し
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>赤﨑選手の2得点（ドッピオ）の活躍もあり、最後まで見応えのあるシーソーゲームとなりました。お互いに譲らずドローで終了となりました。</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>赤﨑選手が2得点。点を取り合う展開となり、2-2で試合を終えました。</p>
             </div>
         </details>
         <details class="match-card">
@@ -361,7 +363,7 @@
                     ・得点者：赤﨑 瑛太、GUEST<br>
                     ・アシスト：億田 宗太郎
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>長時間の総力戦となる中、得点を奪う場面もありましたが、相手の攻撃を抑えきれず悔しい敗戦となりました。この経験を次に活かします。</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>2得点を挙げましたが、相手の攻撃を抑えられず2-6で敗れました。</p>
             </div>
         </details>
 
@@ -386,7 +388,7 @@
                     ・得点者：藤井 都詩、GUEST<br>
                     ・アシスト：GUEST、岩本 弘
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>守備陣が相手の攻撃をしっかりとシャットアウトし、要所を突いた攻撃で2得点を奪って見事な勝利を収めました！</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>藤井選手とゲスト選手が得点し、2-0で勝利。相手の攻撃を無失点に抑えました。</p>
             </div>
         </details>
         <details class="match-card">
@@ -409,7 +411,7 @@
                     ・得点者：無し<br>
                     ・アシスト：無し
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>相手の守備を崩しきれず、悔しい無得点での敗戦となりました。この課題を次の練習からしっかりと修正していきます。</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>相手の守備を崩せず、0-3で敗れました。得点につなげる攻撃が次の課題です。</p>
             </div>
         </details>
 
@@ -434,7 +436,7 @@
                     ・得点者：神原 蒼、斧 佳吾、岡部 東弥、赤﨑 瑛太<br>
                     ・アシスト：斧 佳吾
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>多彩な攻撃パターンから次々とゴールが生まれ、4-1で見事な勝利を収めました！攻守がかみ合った充実のゲームとなりました。</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>4人が得点し、4-1で勝利しました。攻守ともにかみ合った試合でした。</p>
             </div>
         </details>
         <details class="match-card">
@@ -456,7 +458,7 @@
                     ・トータル：ASCENSO 8 - 1 もつこFC（勝利）<br>
                     ・得点者：中西 晴大（2）、村上 天優、藤井 都詩、GUEST（3）、オウンゴール
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>攻撃陣が爆発し、終わってみれば大量8得点の快勝となりました！各本を通じて主導権を握り続け、チーム全体の勢いを感じさせる素晴らしいゲームとなりました。</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>各本を通じて主導権を握り、8-1で勝利しました。</p>
             </div>
         </details>
 
@@ -481,7 +483,7 @@
                     ・得点者：斧 佳吾（2）、上田 陽也<br>
                     ・アシスト：白川 翔彪
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>複数本の試合を通して優位に試合を進め、斧選手のマルチゴールや上田選手の得点でしっかりと加点し、勝利をつかむことができました！</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>斧選手が2得点、上田選手が1得点。3-1で勝利しました。</p>
             </div>
         </details>
         <details class="match-card">
@@ -504,7 +506,7 @@
                     ・得点者：斧 佳吾、中西 晴大、佐藤 誠真<br>
                     ・アシスト：中西 晴大
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>長時間の総力戦となる中、両チーム合わせて多くのゴールが生まれる展開となりました。終盤まで粘りを見せましたが、惜しくも1点差で敗戦となりました。</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>点を取り合う展開で、3-4の敗戦。最後まで粘りましたが、1点届きませんでした。</p>
             </div>
         </details>
 
@@ -529,7 +531,7 @@
                     ・2本目：1 - 1（得点：GUEST / アシスト：岡部 東弥）<br>
                     ・3本目：0 - 1
                 </p>
-                <p class="match-comment"><strong>試合コメント：</strong><br>緊迫した展開が続きましたが、終盤に競り負ける形となり悔しい敗戦となりました。この経験をチームの底上げに活かします。</p>
+                <p class="match-comment"><strong>試合を振り返って</strong>1本目は0-0、2本目は1-1。3本目に失点し、合計1-2で敗れました。</p>
             </div>
         </details>
 
@@ -542,9 +544,11 @@
     </section>
 
     <!-- スマホ用追従ボタン -->
-    <a href="contact.html" class="floating-contact-btn">体験参加・入団希望はこちら</a>
 
     <!-- jsフォルダ内の sample.js を読み込む -->
     <script src="js/sample.js"></script>
+
+<footer class="site-footer"><a class="site-footer-brand" href="main.html"><img src="image/logo.png" alt=""><span><strong>ASCENSO ITAMI</strong><small>ITAMI FOOTBALL CLUB</small></span></a><nav aria-label="フッターナビゲーション"><a href="main.html">HOME</a><a href="about.html">CLUB</a><a href="staff.html">PLAYERS</a><a href="report.html">JOURNAL</a><a href="contact.html">JOIN US</a><a href="https://www.instagram.com/ascenso_itami/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a></nav><small class="site-copyright">© 2025 ASCENSO ITAMI FOOTBALL CLUB</small></footer>
+  <div class="mobile-join-bar"><a class="mobile-join-link" href="contact.html">入団希望者はこちら <span aria-hidden="true">↗</span></a></div>
 </body>
 </html>

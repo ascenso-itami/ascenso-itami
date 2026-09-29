@@ -3,7 +3,7 @@
 <head>
     <meta name="description" content="兵庫県伊丹市で活動する社会人サッカーチーム「ASCENSO ITAMI（アセンソ伊丹）」の公式サイトです。兵庫県リーグ昇格を目指し、礼儀と挑戦を大切に活動しています。入団希望・体験参加はこちらから。">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <title>チーム理念・詳細 | ASCENSO ITAMI 公式サイト</title>
 
@@ -12,75 +12,36 @@
         rel="stylesheet"
     >
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/sample.css">
+  <link rel="stylesheet" href="css/site-shell.css">
+  <meta name="theme-color" content="#101b17">
 </head>
 
-<body>
+<body class="site-page page-about has-site-shell">
 
     <!-- =========================
          HEADER
     ========================== -->
-    <header class="header">
-
-        <div class="logo-area">
-
-            <a href="main.html">
-                <img
-                    src="image/logo.png"
-                    alt="ASCENSO ITAMI ロゴ"
-                    class="logo-img"
-                >
-            </a>
-
-            <div class="team-title">
-                <span class="team-name">
-                    ASCENSO ITAMI
-                </span>
-            </div>
-
-        </div>
-
-        <button
-            class="hamburger-btn"
-            id="hamburgerBtn"
-            aria-label="メニューを開く"
-        >
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <nav class="nav-menu" id="navMenu">
-
-            <a href="main.html">
-                TOP
-            </a>
-
-            <a
-                href="about.html"
-                class="active"
-            >
-                チーム情報
-            </a>
-
-            <a href="staff.html">
-                スタッフ/選手紹介
-            </a>
-
-            <a href="report.html">
-                活動報告
-            </a>
-
-            <a
-                href="contact.html"
-                class="nav-btn"
-            >
-                入団希望者
-            </a>
-
-        </nav>
-
-    </header>
+    <header class="global-header">
+    <a class="global-brand" href="index.html" aria-label="ASCENSO ITAMI オープニングを再生">
+      <span class="global-logo"><img src="image/logo.png" alt="" width="1135" height="1150"></span>
+      <span class="global-brand-name">ASCENSO ITAMI</span>
+    </a>
+    <button class="global-menu-toggle" id="hamburgerBtn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="navMenu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+    <nav class="global-nav" id="navMenu" aria-label="メインナビゲーション">
+      <a href="main.html">TOP</a>
+      <a href="about.html" aria-current="page">チーム情報</a>
+      <a href="staff.html">選手・スタッフ</a>
+      <a href="report.html">活動報告</a>
+      <a href="contact.html" class="global-nav-join">入団希望者</a>
+    </nav>
+    <button class="global-menu-backdrop" id="menuBackdrop" type="button" aria-label="メニューを閉じる" tabindex="-1" hidden></button>
+  </header>
 
 
     <!-- =========================
@@ -116,61 +77,19 @@
                     CONCEPT
                 </span>
 
-                <h2>
-                    礼儀を重んじ、挑戦し続ける。<br>
-                    人との繋がりを、サッカーの力に。
-                </h2>
-
-                <p>
-                    <strong>
-                        「礼儀」「挑戦」「繋がり」
-                    </strong>
-                    <br>
-                    私達が大切にしている3つの要素です。
-                </p>
+                <h2><span class="concept-sentence"><span class="copy-unit">礼儀を重んじ、</span><span class="copy-unit">挑戦し続ける。</span></span> <span class="concept-sentence"><span class="copy-unit">人との繋がりを、</span><span class="copy-unit">サッカーの力に。</span></span></h2>
+                <p>私たちは<strong>「礼儀」「挑戦」「つながり」</strong>を大切にしています。</p>
 
             </div>
 
 
             <div class="concept-body">
 
-                <p>
-                    サッカーができることは、決して当たり前ではありません。
-                    共に戦う仲間、対戦相手、レフェリー、運営に携わる方々、
-                    そして日々チームを支えてくださる方々。
-                    多くの人との繋がりがあるからこそ、
-                    私たちはピッチに立つことができます。
-                </p>
+                <p>サッカーを続けられるのは、仲間や対戦相手、審判、運営の方々、そしてチームを支えてくださる方々がいるからです。挨拶や日々の振る舞いから、感謝と敬意を忘れないチームでありたいと思っています。</p>
 
-                <p>
-                    だからこそ、サッカーができる環境への感謝を忘れず、
-                    関わるすべての方々への礼儀を大切にする。
-                    <br>
-                    そして、ピッチでは誰よりも勝利に貪欲に、
-                    最後まで戦い抜く。
-                </p>
+                <p>ピッチでは勝利にこだわります。練習から真剣に取り組み、試合では最後まで走る。一人ひとりができることを増やし、兵庫県リーグへの昇格を目指します。</p>
 
-                <p>
-                    私たちは、ただサッカーを楽しむだけのチームではありません。
-                    勝利を本気で目指し、そのために一人ひとりが努力し、
-                    仲間と支え合いながら成長していく。
-                    そんなチームを目指しています。
-                </p>
-
-                <p>
-                    挑戦を止めれば、その先の成長はありません。
-                    だからこそ、現状に満足することなく、
-                    常に高みを目指して挑戦し続ける。
-                </p>
-
-                <p>
-                    サッカーを通じて生まれる出会いを大切に。
-                    人との繋がりを力に変えて、
-                    チームとして、そして一人の人間として成長していく。
-                    <br>
-                    伊丹から、もっと高みへ。
-                    アセンソ伊丹は、挑戦を続けます。
-                </p>
+                <p>サッカーを通じて出会った仲間と、長く一緒にプレーしていきたい。互いに声をかけ、支え合いながら、伊丹で活動を続けていきます。</p>
 
             </div>
 
@@ -373,15 +292,15 @@
             <!-- 3. エンブレム & ユニフォーム (EMBLEM & UNIFORM) -->
             <div class="about-sub-section">
                 <span class="about-section-tag">DESIGN</span>
-                <h3>エンブレム & ユニフォーム</h3>
-                <p class="sub-text">チームカラーである「深緑」と「上品なゴールド」を基調とし、大人としての落ち着きと闘志を表現しています。</p>
+                <h3><span class="copy-unit">エンブレムと</span><span class="copy-unit">ユニフォーム</span></h3>
+                <p class="sub-text">チームカラーは深緑とゴールドです。エンブレムとユニフォームに、この2色を取り入れています。</p>
                 
                 <!-- エンブレムの表示エリア -->
                 <div class="emblem-display-area">
                     <img src="image/logo.png" alt="ASCENSO ITAMI エンブレム" class="about-emblem-img">
                     <div class="emblem-description">
                         <h4>CLUB EMBLEM</h4>
-                        <p>円形のデザインの中にチームのアイデンティティとサッカーボールを配置。洗練された緑とゴールドが、ピッチ上での存在感を際立たせます。</p>
+                        <p>深緑とゴールドを使った円形のエンブレムに、サッカーボールを配しています。</p>
                     </div>
                 </div>
 
@@ -402,8 +321,8 @@
 <!-- 4. 主な活動場所 (GROUND) -->
             <div class="about-sub-section">
                 <span class="about-section-tag">GROUND</span>
-                <h3>主な活動場所・概要</h3>
-                <p>チームの活動拠点および概要は以下の通りです。</p>
+                <h3>活動場所とスケジュール</h3>
+                <p>伊丹スポーツセンターなどで活動しています。</p>
                 <div class="info-card" style="margin-top: 15px;">
                     <div class="info-row">
                         <span class="info-label"> 活動場所</span>
@@ -432,12 +351,12 @@
                     <li>2027年4月時点で18歳以上のサッカー経験者（※中学以降の経験対象 / 高校生不可）</li>
                 </ul>
 
-                <h4 style="margin-top: 25px; color: #2D3D31; font-size: 16px;">■ 求める人材</h4>
+                <h4 style="margin-top: 25px; color: #2D3D31; font-size: 16px;">■ 大切にしてほしいこと</h4>
                 <ul class="guideline-list">
-                    <li>チームの活動に積極的に参加していただける方</li>
-                    <li>楽しむ本質を忘れず、真剣にサッカーと向き合える方</li>
-                    <li>礼儀正しく、チームの規律を守ってプレーできる方</li>
-                    <li>チームメイト、スタッフ、対戦相手、試合に関わるすべての人にリスペクトを持てる方</li>
+                    <li>チームの練習や試合に積極的に参加できる方</li>
+                    <li>サッカーを楽しみながら、真剣に取り組める方</li>
+                    <li>礼儀やチームのルールを大切にできる方</li>
+                    <li>仲間や対戦相手、審判、運営の方々を尊重できる方</li>
                 </ul>
 
                 <h4 style="margin-top: 25px; color: #2D3D31; font-size: 16px;">■ 活動費用</h4>
@@ -471,9 +390,11 @@
 
         </div>
     </section>
-<a href="contact.html" class="floating-contact-btn">体験参加・入団希望はこちら</a>
 <!-- jsフォルダ内の sample.js を読み込む -->
     <script src="js/sample.js"></script>
+
+<footer class="site-footer"><a class="site-footer-brand" href="main.html"><img src="image/logo.png" alt=""><span><strong>ASCENSO ITAMI</strong><small>ITAMI FOOTBALL CLUB</small></span></a><nav aria-label="フッターナビゲーション"><a href="main.html">HOME</a><a href="about.html">CLUB</a><a href="staff.html">PLAYERS</a><a href="report.html">JOURNAL</a><a href="contact.html">JOIN US</a><a href="https://www.instagram.com/ascenso_itami/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a></nav><small class="site-copyright">© 2025 ASCENSO ITAMI FOOTBALL CLUB</small></footer>
+  <div class="mobile-join-bar"><a class="mobile-join-link" href="contact.html">入団希望者はこちら <span aria-hidden="true">↗</span></a></div>
 </body>
 
 </html>

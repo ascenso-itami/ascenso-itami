@@ -1,133 +1,108 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta name="description" content="兵庫県伊丹市で活動する社会人サッカーチーム「ASCENSO ITAMI（アセンソ伊丹）」の公式サイトです。兵庫県リーグ昇格を目指し、礼儀と挑戦を大切に活動しています。入団希望・体験参加はこちらから。">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASCENSO ITAMI 公式サイト</title>
-    <!-- Google Fonts (Montserrat) -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
-    <!-- CSSファイルの読み込み -->
-    <link rel="stylesheet" href="css/sample.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#101b17">
+  <meta name="description" content="兵庫県伊丹市の社会人サッカークラブ ASCENSO ITAMI。仲間とともに、兵庫県リーグ昇格を目指して挑戦を続けています。体験参加・入団希望はこちら。">
+  <title>ASCENSO ITAMI | 伊丹の社会人サッカーチーム</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/sample.css">
+  <link rel="stylesheet" href="css/site-shell.css">
 </head>
-<body>
+<body class="club-home has-site-shell">
+  <header class="global-header">
+    <a class="global-brand" href="index.html" aria-label="ASCENSO ITAMI オープニングを再生">
+      <span class="global-logo"><img src="image/logo.png" alt="" width="1135" height="1150"></span>
+      <span class="global-brand-name">ASCENSO ITAMI</span>
+    </a>
+    <button class="global-menu-toggle" id="hamburgerBtn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="navMenu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+    <nav class="global-nav" id="navMenu" aria-label="メインナビゲーション">
+      <a href="main.html" aria-current="page">TOP</a>
+      <a href="about.html">チーム情報</a>
+      <a href="staff.html">選手・スタッフ</a>
+      <a href="report.html">活動報告</a>
+      <a href="contact.html" class="global-nav-join">入団希望者</a>
+    </nav>
+    <button class="global-menu-backdrop" id="menuBackdrop" type="button" aria-label="メニューを閉じる" tabindex="-1" hidden></button>
+  </header>
 
-    <!-- ヘッダー -->
-    <header class="header">
-        <div class="logo-area">
-            <!-- ロゴ画像 -->
-            <a href="main.html"><img src="image/logo.png" alt="ASCENSO ITAMI ロゴ" class="logo-img"></a>
-            <div class="team-title">
-                <span class="team-name">ASCENSO ITAMI</span>
-            </div>
+  <main>
+    <section class="club-hero" aria-labelledby="hero-title">
+      <div class="club-hero-image" role="img" aria-label="ゴールを喜び合うASCENSO ITAMIの選手たち"></div>
+      <div class="club-hero-shade"></div>
+      <div class="club-hero-grain"></div>
+      <div class="hero-vertical-note">ITAMI, HYOGO · EST. 2025</div>
+      <div class="club-hero-content">
+        <p class="eyebrow"><i></i> ASCENSO ITAMI OFFICIAL WEBSITE</p>
+        <h1 id="hero-title"><span class="headline-line">フットボールからしか</span><span class="headline-line">得られない熱が、</span><em class="headline-line">ここにある。</em></h1>
+        <p class="hero-copy">ASCENSO ITAMIは、伊丹を拠点とする社会人サッカーチームです。兵庫県リーグ昇格を目指して活動しています。</p>
+        <div class="hero-actions">
+          <a class="button button-lime" href="contact.html">体験参加・入団について <span>↗</span></a>
+          <a class="text-link" href="#club-story">クラブを知る <span>↓</span></a>
         </div>
-        <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="nav-menu" id="navMenu">
-            <a href="main.html" class="active">TOP</a>
-            <a href="about.html">チーム情報</a>
-            <a href="staff.html">スタッフ/選手紹介</a>
-            <a href="report.html">活動報告</a>
-            <a href="contact.html" class="nav-btn">入団希望者</a>
-        </nav>
-    </header>
-
-<!-- ヒーローセクション（スライドショー） -->
-    <section class="hero hero-section">
-        <!-- スライドショー背景（画像を自動で切り替え） -->
-        <div class="hero-slider">
-            <div class="hero-slide" style="background-image: url('image/top1.png');"></div>
-            <div class="hero-slide" style="background-image: url('image/top2.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('image/top3.jpg');"></div>
-        </div>
-        <div class="hero-overlay"></div>
-
-        <!-- テキストコンテンツ -->
-        <div class="hero-content">
-            <h1 class="hero-title">ASCENSO ITAMI</h1>
-            <p>もう一度熱いサッカーを！</p>
-        </div>
+      </div>
+      <div class="club-hero-side">ASCENSO ITAMI FOOTBALL CLUB</div>
+      <div class="hero-bottomline"><span>HYOGO · ITAMI</span><span>RISE TOGETHER</span><span>SCROLL TO EXPLORE ↓</span></div>
     </section>
 
-    <!-- 【チーム理念ダイジェスト（トップ用）】 -->
-    <section class="top-concept-section">
-        <div class="top-concept-inner">
-            <span class="concept-subtitle">CONCEPT</span>
-            <h2>挑み続けろ、伊丹から高みへ。</h2>
-            <p>
-                2025年、伊丹で生まれた社会人サッカーチーム。<br>
-                目指すのは、兵庫県リーグ昇格。<br><br>
-                仲間とともに、勝利を追い求める。<br>
-                伊丹から、更なる高みへ。
-            </p>
-            
-            <div class="concept-passion-banner">
-                <span class="passion-sub">PASSIONATE FOOTBALL</span>
-                <p>フットボールからしか得られない熱が、ここにある。</p>
-            </div>
+    <div class="club-marquee" aria-label="ASCENSO ITAMI, Rise together"><div>ASCENSO ITAMI <b>✳</b> RISE TOGETHER <b>✳</b> ITAMI, HYOGO <b>✳</b> ASCENSO ITAMI <b>✳</b> RISE TOGETHER <b>✳</b> ITAMI, HYOGO <b>✳</b></div></div>
 
-            <div class="top-about-link">
-                <a href="about.html">チーム理念について詳しく見る ➔</a>
-            </div>
-        </div>
+    <section class="club-intro" id="club-story">
+      <div class="intro-kicker"><span>01 / ABOUT US</span><span>EST. 2025</span></div>
+      <div class="intro-layout">
+        <div class="intro-heading"><p class="eyebrow dark"><i></i> ABOUT US</p><h2><span class="headline-line">サッカーを</span><em class="headline-line">本気で続ける</em></h2></div>
+        <div class="intro-body"><p>2025年に伊丹で活動を始めました。現在は北摂C1リーグに所属し、兵庫県リーグへの昇格を目指しています。</p><p>練習も試合も、勝つために一人ひとりができることを考える。そんな時間を一緒に楽しめる仲間を増やしていきたいと思っています。</p><a class="arrow-link" href="about.html">クラブについて <span>↗</span></a></div>
+      </div>
+      <div class="intro-numbers"><div><strong>2025</strong><span>ESTABLISHED</span></div><div><strong>ITAMI</strong><span>OUR HOMETOWN</span></div><div><strong>C1</strong><span>HOKUSETSU LEAGUE</span></div></div>
     </section>
 
-    <!-- チーム情報セクション -->
-    <section class="info-section" id="info">
-        
-        <!-- セクションの見出し -->
-        <div class="section-title">
-            <h2>CLUB INFO</h2>
-            <p>チーム概要</p>
-        </div>
-
-        <!-- 基本情報のカード -->
-        <div class="info-card">
-            <div class="info-row">
-                <span class="info-label">所属リーグ</span>
-                <span class="info-value">兵庫県北摂C1リーグ（県4部相当）</span>
-            </div>
-            <div class="info-row">
-                <span class="info-label"> 活動場所</span>
-                <span class="info-value">伊丹スポーツセンター他</span>
-            </div>
-            <div class="info-row">
-                <span class="info-label"> 活動日時</span>
-                <span class="info-value">
-                    毎週月曜日 ＋ 月2回程度の試合
-                    <span class="info-note">
-                        ※週によって変動あり。最新のスケジュールは<a href="https://www.instagram.com/ascenso_itami/" target="_blank" class="info-link">公式Instagram</a>をご確認ください。
-                    </span>
-                </span>
-            </div>
-        </div>
-
-                    <!-- 公式Instagramへの誘導セクション -->
-        <div class="insta-banner-section">
-            <a href="https://www.instagram.com/ascenso_itami/" target="_blank" rel="noopener" class="insta-banner-card">
-                <div class="insta-banner-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                </div>
-                <div class="insta-banner-text">
-                    <span class="insta-banner-sub">OFFICIAL INSTAGRAM</span>
-                    <span class="insta-banner-main">公式Instagramはこちら ＞</span>
-                </div>
-            </a>
-        </div>
+    <section class="club-feature">
+      <div class="feature-photo"><img src="image/top2.jpg" alt="試合前、円陣を組む選手たち" loading="lazy"><span class="photo-label">BUILT TOGETHER · ITAMI</span></div>
+      <div class="feature-copy"><p class="eyebrow"><i></i> OUR VALUES</p><h2><span class="headline-line">礼儀を大切に</span><span class="headline-line">勝利にこだわる</span></h2><p>一緒にプレーする仲間にも、対戦相手や審判にも敬意を持つこと。サッカーができる環境への感謝を忘れず、試合では最後まで勝ちを目指します。</p><a class="button button-outline" href="about.html">チーム理念を見る <span>↗</span></a></div>
+      <div class="feature-index">A / 01</div>
     </section>
 
+    <section class="club-details" id="club-info">
+      <div class="section-head"><div><p class="eyebrow dark"><i></i> CLUB INFO</p><h2>チーム情報</h2></div><span class="section-en">ITAMI, HYOGO</span></div>
+      <div class="details-grid">
+        <article class="detail-card"><span class="detail-no">01</span><span class="detail-icon">⌖</span><h3>拠点</h3><p>兵庫県 伊丹市</p><small>ITAMI, HYOGO</small></article>
+        <article class="detail-card"><span class="detail-no">02</span><span class="detail-icon">◉</span><h3>所属リーグ</h3><p><span class="copy-unit">兵庫県北摂</span> <span class="copy-unit">C1リーグ</span></p><small>県4部相当</small></article>
+        <article class="detail-card"><span class="detail-no">03</span><span class="detail-icon">↗</span><h3>活動場所</h3><p><span class="copy-unit">伊丹スポーツセンター</span> ほか</p><small>HOME GROUND</small></article>
+        <article class="detail-card"><span class="detail-no">04</span><span class="detail-icon">◷</span><h3>活動日</h3><p><span class="copy-unit">毎週月曜日</span> <span class="copy-unit">＋ 試合</span></p><small>試合は月2回程度</small></article>
+      </div>
+      <p class="details-note">※活動日時・会場は週によって変動します。最新情報は公式Instagramをご確認ください。</p>
+    </section>
 
+    <section class="club-people">
+      <div class="people-photo"><img src="image/top3.jpg" alt="ゴールを喜び合う選手たち" loading="lazy"></div>
+      <div class="people-content"><p class="eyebrow"><i></i> PLAYERS &amp; STAFF</p><h2><span class="headline-line">一緒に戦う</span><em class="headline-line">選手とスタッフ</em></h2><p>それぞれの経験を持つメンバーが集まっています。選手のポジションや出身校、スタッフの経歴を紹介します。</p><a class="button button-lime" href="staff.html">選手・スタッフを見る <span>↗</span></a></div>
+      <div class="people-caption">ASCENSO ITAMI</div>
+    </section>
 
-    <!-- スマホ用追従ボタン -->
-    <a href="contact.html" class="floating-contact-btn">体験参加・入団希望はこちら</a>
+    <section class="club-journal" aria-labelledby="latest-result-title">
+      <div class="section-head"><div><p class="eyebrow dark"><i></i> LATEST RESULT</p><h2 id="latest-result-title">最新の試合結果</h2></div><a class="arrow-link" href="report.html">活動報告をすべて見る <span>↗</span></a></div>
+      <a class="latest-match-card" href="report.html#match-20260920" aria-label="2026年9月20日 宝塚FC戦 7対0で勝利。詳しい活動報告を見る">
+        <div class="latest-match-meta"><time datetime="2026-09-20">2026.09.20（日）</time><span>北摂C1リーグ 第4節</span></div>
+        <div class="latest-match-scoreboard">
+          <span class="latest-match-team"><span class="copy-unit">ASCENSO</span> <span class="copy-unit">ITAMI</span></span>
+          <div class="latest-match-result"><span class="latest-match-badge">WIN</span><strong class="latest-match-score">7 <span>–</span> 0</strong></div>
+          <span class="latest-match-team">宝塚FC</span>
+        </div>
+        <div class="latest-match-footer"><span>伊丹スポーツセンター</span><span class="latest-match-link">試合の詳細を見る <span aria-hidden="true">↗</span></span></div>
+      </a>
+    </section>
 
-<!-- jsフォルダ内の sample.js を読み込む -->
-    <script src="js/sample.js"></script>
+    <section class="club-join">
+      <div class="join-watermark">ASCENSO</div><p class="eyebrow"><i></i> JOIN US</p><h2><span class="copy-unit">まずは練習に</span><span class="copy-unit">来てみませんか</span></h2><p class="join-copy">入団を考えている方は、フォームかInstagramのDMからご連絡ください。体験参加の日程をご案内します。</p><a class="button button-lime button-large" href="contact.html">体験参加・入団について <span>↗</span></a><a class="join-instagram" href="https://www.instagram.com/ascenso_itami/" target="_blank" rel="noopener noreferrer">公式Instagramで最新情報を見る ↗</a></section>
+  </main>
+
+  <footer class="club-footer"><a class="club-brand footer-brand" href="main.html"><img src="image/logo.png" alt=""><span><strong>ASCENSO ITAMI</strong><small>ITAMI FOOTBALL CLUB</small></span></a><p>兵庫県伊丹市の社会人サッカーチーム</p><nav aria-label="フッターナビゲーション"><a href="about.html">CLUB</a><a href="staff.html">PLAYERS</a><a href="report.html">JOURNAL</a><a href="contact.html">JOIN US</a><a href="https://www.instagram.com/ascenso_itami/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a></nav><small class="copyright">© 2025 ASCENSO ITAMI FOOTBALL CLUB</small></footer>
+  <script src="js/sample.js"></script>
+  <div class="mobile-join-bar"><a class="mobile-join-link" href="contact.html">入団希望者はこちら <span aria-hidden="true">↗</span></a></div>
 </body>
-
 </html>

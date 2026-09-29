@@ -3,41 +3,42 @@
 <head>
     <meta name="description" content="兵庫県伊丹市で活動する社会人サッカーチーム「ASCENSO ITAMI（アセンソ伊丹）」の公式サイトです。兵庫県リーグ昇格を目指し、礼儀と挑戦を大切に活動しています。入団希望・体験参加はこちらから。">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>選手・スタッフ紹介 | ASCENSO ITAMI 公式サイト</title>
     <!-- Google Fonts (Montserrat) -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
     <!-- CSSファイルの読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/sample.css">
+  <link rel="stylesheet" href="css/site-shell.css">
+  <meta name="theme-color" content="#101b17">
 </head>
-<body>
+<body class="site-page page-players has-site-shell">
 
     <!-- ヘッダー -->
-    <header class="header">
-        <div class="logo-area">
-            <!-- ロゴ画像 -->
-            <a href="main.html"><img src="image/logo.png" alt="ASCENSO ITAMI ロゴ" class="logo-img"></a>
-            <div class="team-title">
-                <span class="team-name">ASCENSO ITAMI</span>
-            </div>
-        </div>
-        <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="nav-menu" id="navMenu">
-            <a href="main.html">TOP</a>
-            <a href="about.html">チーム情報</a>
-            <a href="staff.html" class="active">スタッフ/選手紹介</a>
-            <a href="report.html">活動報告</a>
-            <a href="contact.html" class="nav-btn">入団希望者</a>
-        </nav>
-    </header>
+    <header class="global-header">
+    <a class="global-brand" href="index.html" aria-label="ASCENSO ITAMI オープニングを再生">
+      <span class="global-logo"><img src="image/logo.png" alt="" width="1135" height="1150"></span>
+      <span class="global-brand-name">ASCENSO ITAMI</span>
+    </a>
+    <button class="global-menu-toggle" id="hamburgerBtn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="navMenu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+    <nav class="global-nav" id="navMenu" aria-label="メインナビゲーション">
+      <a href="main.html">TOP</a>
+      <a href="about.html">チーム情報</a>
+      <a href="staff.html" aria-current="page">選手・スタッフ</a>
+      <a href="report.html">活動報告</a>
+      <a href="contact.html" class="global-nav-join">入団希望者</a>
+    </nav>
+    <button class="global-menu-backdrop" id="menuBackdrop" type="button" aria-label="メニューを閉じる" tabindex="-1" hidden></button>
+  </header>
 
     <!-- ページタイトルバナー -->
     <section class="page-header">
-        <h1>PLAYERS & STAFF</h1>
+        <h1><span class="copy-unit">PLAYERS</span> <span class="copy-unit">&amp; STAFF</span></h1>
         <p>選手・スタッフ紹介</p>
     </section>
 
@@ -395,7 +396,7 @@
                 <div class="player-card staff-card" 
                     data-role="代表" 
                     data-name="岡部 東弥（オカベ トウヤ）" 
-                    data-img="image/player_default.jpg"
+                    data-img="image/staff1.jpg"
                     data-career="2024年3月 兵庫県立伊丹高等学校 卒業<br>2024年4月 同志社大学商学部 入学<br>2025年3月 アセンソ伊丹設立 代表就任"
                     data-vision="サッカーができる環境を用意してくださる、全ての関係者の方々に感謝をし、礼儀の心を持ちながら挑戦し続けるチームを作ります。">
                     <div class="player-img-box"><img src="image/staff1.jpg" alt="代表"></div>
@@ -410,7 +411,7 @@
                 <div class="player-card staff-card" 
                     data-role="副代表" 
                     data-name="河岡 朝日（カワオカ アサヒ）" 
-                    data-img="image/player_default.jpg"
+                    data-img="image/staff2.jpg"
                     data-career="2024年3月 兵庫県立伊丹高等学校 卒業<br>2024年4月 神戸大学理学部 入学<br>2025年3月 アセンソ伊丹設立 副代表就任"
                     data-vision="楽しさと真剣さどちらも追い求めるサッカーチームを作っていきたいと思っています。">
                     <div class="player-img-box"><img src="image/staff2.jpg" alt="副代表"></div>
@@ -425,7 +426,7 @@
                 <div class="player-card staff-card" 
                     data-role="監督" 
                     data-name="藤井 都詩（フジイ トウタ）" 
-                    data-img="image/player_default.jpg"
+                    data-img="image/staff3.jpg"
                     data-career="2024年3月 兵庫県立伊丹高等学校 卒業<br>2024年4月 近畿大学文芸学部 入学<br>2025年3月 アセンソ伊丹 監督就任"
                     data-vision="「机上は緻密に、現場は柔軟に」をモットーに、選手と向き合いながらチームを率いています。<br>それぞれの個性を最大限に活かし、全員で成長し続けられるチームを目指します！">
                     <div class="player-img-box"><img src="image/staff3.jpg" alt="監督"></div>
@@ -523,9 +524,11 @@
     </div>
 
     <!-- スマホ用追従ボタン -->
-    <a href="contact.html" class="floating-contact-btn">体験参加・入団希望はこちら</a>
 
     <!-- jsフォルダ内の sample.js を読み込む -->
     <script src="js/sample.js"></script>
+
+<footer class="site-footer"><a class="site-footer-brand" href="main.html"><img src="image/logo.png" alt=""><span><strong>ASCENSO ITAMI</strong><small>ITAMI FOOTBALL CLUB</small></span></a><nav aria-label="フッターナビゲーション"><a href="main.html">HOME</a><a href="about.html">CLUB</a><a href="staff.html">PLAYERS</a><a href="report.html">JOURNAL</a><a href="contact.html">JOIN US</a><a href="https://www.instagram.com/ascenso_itami/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a></nav><small class="site-copyright">© 2025 ASCENSO ITAMI FOOTBALL CLUB</small></footer>
+  <div class="mobile-join-bar"><a class="mobile-join-link" href="contact.html">入団希望者はこちら <span aria-hidden="true">↗</span></a></div>
 </body>
 </html>

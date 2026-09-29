@@ -3,37 +3,38 @@
 <head>
     <meta name="description" content="兵庫県伊丹市で活動する社会人サッカーチーム「ASCENSO ITAMI（アセンソ伊丹）」の公式サイトです。兵庫県リーグ昇格を目指し、礼儀と挑戦を大切に活動しています。入団希望・体験参加はこちらから。">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>入団希望・体験参加 | ASCENSO ITAMI 公式サイト</title>
     <!-- Google Fonts (Montserrat) -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
     <!-- CSSファイルの読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/sample.css">
+  <link rel="stylesheet" href="css/site-shell.css">
+  <meta name="theme-color" content="#101b17">
 </head>
-<body>
+<body class="site-page page-join has-site-shell">
 
     <!-- ヘッダー -->
-    <header class="header">
-        <div class="logo-area">
-            <!-- ロゴ画像 -->
-            <a href="main.html"><img src="image/logo.png" alt="ASCENSO ITAMI ロゴ" class="logo-img"></a>
-            <div class="team-title">
-                <span class="team-name">ASCENSO ITAMI</span>
-            </div>
-        </div>
-        <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="nav-menu" id="navMenu">
-            <a href="main.html">TOP</a>
-            <a href="about.html">チーム情報</a>
-            <a href="staff.html">スタッフ/選手紹介</a>
-            <a href="report.html">活動報告</a>
-            <a href="contact.html" class="nav-btn">入団希望者</a>
-        </nav>
-    </header>
+    <header class="global-header">
+    <a class="global-brand" href="index.html" aria-label="ASCENSO ITAMI オープニングを再生">
+      <span class="global-logo"><img src="image/logo.png" alt="" width="1135" height="1150"></span>
+      <span class="global-brand-name">ASCENSO ITAMI</span>
+    </a>
+    <button class="global-menu-toggle" id="hamburgerBtn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="navMenu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+    <nav class="global-nav" id="navMenu" aria-label="メインナビゲーション">
+      <a href="main.html">TOP</a>
+      <a href="about.html">チーム情報</a>
+      <a href="staff.html">選手・スタッフ</a>
+      <a href="report.html">活動報告</a>
+      <a href="contact.html" class="global-nav-join" aria-current="page">入団希望者</a>
+    </nav>
+    <button class="global-menu-backdrop" id="menuBackdrop" type="button" aria-label="メニューを閉じる" tabindex="-1" hidden></button>
+  </header>
 
     <!-- ページタイトルバナー -->
     <section class="page-header">
@@ -48,42 +49,45 @@
             <!-- メッセージ -->
             <div class="concept-catch">
                 <span class="about-section-tag">WELCOME</span>
-                <h2>共に「高み」を目指す仲間を募集しています</h2>
+                <h2><span class="copy-unit">共に「高み」を目指す</span><span class="copy-unit">仲間を募集しています</span></h2>
                 <p>ASCENSO ITAMIでは、礼儀を重んじ、勝利に向けて本気で挑戦し続ける新たな仲間を募集中です。<br>まずは一度、体験参加にお越しください！</p>
             </div>
 
             <!-- 1. 募集要項 -->
             <div class="contact-block">
-                <h3 class="contact-sub-title">募集要項・求める人物像</h3>
-                <div class="info-card">
-                    <div class="info-row">
-                        <span class="info-label">参加資格</span>
-                        <span class="info-value">2027年4月時点で18歳以上のサッカー経験者（※中学以降の経験対象 / 高校生不可）</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-label">求める人材</span>
-                        <span class="info-value">
-                            <ul style="margin: 0; padding-left: 20px; list-style-type: disc;">
-                                <li>チームの活動に積極的に参加していただける方</li>
-                                <li>楽しむ本質を忘れず、真剣にサッカーと向き合える方</li>
-                                <li>礼儀正しく、チームの規律を守ってプレーできる方</li>
-                                <li>チームメイト、スタッフ、対戦相手、試合に関わるすべての人にリスペクトを持てる方</li>
-                            </ul>
-                        </span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-label">活動費用</span>
-                        <span class="info-value">
-                            入会金：無し<br>
-                            月会費：2,500円 <span style="font-size: 12px; color: #6B7280;">※月により減額有り</span><br>
-                            ユニフォーム代：12,000円（2着）<br>
-                            選手登録費：7,500円
-                        </span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-label">当日の持ち物</span>
-                        <span class="info-value">サッカー用具一式（スパイク、レガース、ウェア、飲み物）</span>
-                    </div>
+                <h3 class="contact-sub-title">参加条件と活動費用</h3>
+                <div class="join-requirements">
+                    <section class="join-detail" aria-labelledby="eligibility-title">
+                        <h4 id="eligibility-title">参加資格</h4>
+                        <p class="join-eligibility"><strong>18歳以上のサッカー経験者</strong><span>2027年4月時点</span></p>
+                        <p class="join-note">中学以降のサッカー経験がある方が対象です。高校生は参加できません。</p>
+                    </section>
+                    <section class="join-detail" aria-labelledby="club-values-title">
+                        <h4 id="club-values-title">大切にしてほしいこと</h4>
+                        <ul class="join-values">
+                            <li>チームの練習や試合に積極的に参加できる方</li>
+                            <li>サッカーを楽しみながら、真剣に取り組める方</li>
+                            <li>礼儀やチームのルールを大切にできる方</li>
+                            <li>仲間や対戦相手、審判、運営の方々を尊重できる方</li>
+                        </ul>
+                    </section>
+                    <section class="join-detail" aria-labelledby="fees-title">
+                        <h4 id="fees-title">活動費用</h4>
+                        <dl class="join-fees">
+                            <div><dt>入会金</dt><dd>なし</dd></div>
+                            <div><dt>月会費</dt><dd>2,500円</dd></div>
+                            <div><dt>ユニフォーム代</dt><dd>12,000円<small>2着分</small></dd></div>
+                            <div><dt>選手登録費</dt><dd>7,500円</dd></div>
+                        </dl>
+                        <p class="join-note">※月会費は月により減額があります。</p>
+                    </section>
+                    <section class="join-detail" aria-labelledby="equipment-title">
+                        <h4 id="equipment-title">当日の持ち物</h4>
+                        <p>サッカー用具一式をお持ちください。</p>
+                        <ul class="join-equipment">
+                            <li>スパイク</li><li>レガース</li><li>ウェア</li><li>飲み物</li>
+                        </ul>
+                    </section>
                 </div>
             </div>
 
@@ -94,22 +98,22 @@
                     <div class="flow-step">
                         <span class="step-num">STEP 01</span>
                         <h4>ご連絡</h4>
-                        <p>下記フォームまたは公式SNSより体験参加の希望をお送りください。</p>
+                        <p>フォームかInstagramのDMで、体験参加を希望する旨をお知らせください。</p>
                     </div>
                     <div class="flow-step">
                         <span class="step-num">STEP 02</span>
                         <h4>日程調整</h4>
-                        <p>担当者より折り返しご連絡し、体験参加日を確定します。</p>
+                        <p>担当者からご連絡し、参加できる日を相談します。</p>
                     </div>
                     <div class="flow-step">
                         <span class="step-num">STEP 03</span>
                         <h4>体験参加</h4>
-                        <p>実際の練習・試合に参加していただき、チームの雰囲気を体感してください。</p>
+                        <p>練習や試合に参加して、チームの雰囲気を確かめてください。</p>
                     </div>
                     <div class="flow-step">
                         <span class="step-num">STEP 04</span>
                         <h4>正式入団</h4>
-                        <p>双方の合意のもと、登録手続きを行ってチームの一員となります。</p>
+                        <p>お互いの意向を確認してから、選手登録などの手続きを進めます。</p>
                     </div>
                 </div>
             </div>
@@ -117,14 +121,14 @@
             <!-- 3. SNSからの簡単連絡 -->
             <div class="contact-block">
                 <div class="sns-contact-box">
-                    <h3>📱 SNSからのご連絡も受け付けています</h3>
-                    <p>Instagramのダイレクトメッセージ（DM）からでもお気軽にお問い合わせいただけます。</p>
-                    <a href="https://www.instagram.com/ascenso_itami/" target="_blank" rel="noopener" class="sns-btn">Instagram DMで連絡する</a>
+                    <h3><span class="copy-unit">Instagramからも</span><span class="copy-unit">ご相談いただけます</span></h3>
+                    <p>DMで体験参加のご希望や質問を受け付けています。</p>
+                    <a href="https://www.instagram.com/ascenso_itami/" target="_blank" rel="noopener" class="sns-btn">Instagramを開く</a>
                 </div>
             </div>
 
             <!-- 4. 応募フォーム -->
-                <form class="contact-form" action="https://formspree.io/f/meeydkqo" method="POST">
+                <form id="join-form" class="contact-form" action="https://formspree.io/f/meeydkqo" method="POST">
                     
                     <!-- お名前（姓・名） -->
                     <div class="form-group name-group-box">
@@ -210,5 +214,8 @@
     </section>
     <!-- jsフォルダ内の sample.js を読み込む -->
     <script src="js/sample.js"></script>
+
+<footer class="site-footer"><a class="site-footer-brand" href="main.html"><img src="image/logo.png" alt=""><span><strong>ASCENSO ITAMI</strong><small>ITAMI FOOTBALL CLUB</small></span></a><nav aria-label="フッターナビゲーション"><a href="main.html">HOME</a><a href="about.html">CLUB</a><a href="staff.html">PLAYERS</a><a href="report.html">JOURNAL</a><a href="contact.html">JOIN US</a><a href="https://www.instagram.com/ascenso_itami/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a></nav><small class="site-copyright">© 2025 ASCENSO ITAMI FOOTBALL CLUB</small></footer>
+  <div class="mobile-join-bar"><a class="mobile-join-link" href="#join-form">入団希望者はこちら <span aria-hidden="true">↗</span></a></div>
 </body>
 </html>
