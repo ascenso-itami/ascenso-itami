@@ -354,7 +354,7 @@ body {
 .hero {
     height: 500px;
     margin-top: 70px;
-    background-image: linear-gradient(rgba(45, 61, 49, 0.5), rgba(45, 61, 49, 0.5)), url('../image/top1.png');
+    background-image: linear-gradient(rgba(45, 61, 49, 0.5), rgba(45, 61, 49, 0.5)), url('../image/top1-clean.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -2256,7 +2256,7 @@ body {
 .club-home {
     --club-ink: #101b17;
     --club-green: #173e2c;
-    --club-lime: #d5f269;
+    --club-lime: #ABA085;
     --club-paper: #f5f5ef;
     --club-muted: #778078;
     background: var(--club-paper);
@@ -2306,7 +2306,7 @@ body {
 .button:hover { transform: translateY(-3px); }
 .button span { font: 500 17px/1 'Barlow Condensed',sans-serif; }
 .button-lime { color: var(--club-ink)!important; background: var(--club-lime); }
-.button-lime:hover { background: #e4ff87; }
+.button-lime:hover { background: #beb297; }
 .text-link { color: #fff!important; font-size: 12px; font-weight: 700; }
 .text-link span { padding-left: 12px; color: var(--club-lime); }
 .hero-vertical-note,.club-hero-side { position: absolute; z-index: 2; color: rgba(255,255,255,.68); font: 600 9px/1 'Barlow Condensed',sans-serif; letter-spacing: 2px; writing-mode: vertical-rl; }
@@ -2482,7 +2482,7 @@ body {
 .site-page {
     --club-ink: #101b17;
     --club-green: #173e2c;
-    --club-lime: #d5f269;
+    --club-lime: #ABA085;
     --club-paper: #f5f5ef;
     --club-muted: #778078;
     background: var(--club-paper);
@@ -2521,7 +2521,7 @@ body {
     background: radial-gradient(ellipse at 82% 50%,rgba(76,112,78,.33),transparent 45%),linear-gradient(112deg,#10251b,#173e2c 65%,#233d2c); color: #fff;
 }
 .site-page .page-header::before { content: 'ASCENSO  /  ITAMI'; position: absolute; right: -12px; bottom: -63px; color: rgba(255,255,255,.045); font: 900 clamp(88px,18vw,220px)/1 'Barlow Condensed',sans-serif; letter-spacing: -.02em; white-space: nowrap; pointer-events: none; }
-.site-page .page-header::after { content: ''; position: absolute; top: 28px; right: clamp(22px,7vw,100px); width: 104px; height: 104px; border: 1px solid rgba(213,242,105,.35); border-radius: 50%; box-shadow: 0 0 0 17px rgba(213,242,105,.035),0 0 0 34px rgba(213,242,105,.025); }
+.site-page .page-header::after { content: ''; position: absolute; top: 28px; right: clamp(22px,7vw,100px); width: 104px; height: 104px; border: 1px solid rgba(171,160,133,.35); border-radius: 50%; box-shadow: 0 0 0 17px rgba(171,160,133,.035),0 0 0 34px rgba(171,160,133,.025); }
 .site-page .page-header h1 { position: relative; z-index: 1; margin: 0 0 9px; color: #fff; font: 800 clamp(50px,8vw,84px)/.95 'Barlow Condensed',sans-serif; letter-spacing: .025em; }
 .site-page .page-header p { position: relative; z-index: 1; margin: 15px 0 0; color: rgba(255,255,255,.72); font-size: 13px; font-weight: 600; letter-spacing: .08em; }
 .site-page .page-header p::before { content: ''; display: inline-block; width: 19px; height: 2px; margin: 0 11px 4px 0; background: var(--club-lime); }
@@ -2594,7 +2594,7 @@ body {
 .site-page .back-btn-area { margin-top: 64px; }
 .site-page .back-btn { padding: 14px 22px; }
 .site-page .floating-contact-btn { right: 16px; bottom: 16px; left: auto; width: auto; min-height: 50px; padding: 0 20px; border: 0; border-radius: 2px; background: var(--club-lime); color: var(--club-ink); box-shadow: 0 8px 25px rgba(0,0,0,.2); font-size: 12px; line-height: 50px; }
-.site-page .floating-contact-btn:hover { background: #e4ff87; transform: translateY(-2px); }
+.site-page .floating-contact-btn:hover { background: #beb297; transform: translateY(-2px); }
 .site-footer { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 37px max(6vw,24px) 22px; background: #0c1511; color: #fff; }
 .site-footer-brand { display: inline-flex; align-items: center; gap: 11px; color: #fff; text-decoration: none; }
 .site-footer-brand img { width: 43px; height: 43px; object-fit: contain; }

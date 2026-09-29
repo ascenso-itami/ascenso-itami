@@ -92,7 +92,7 @@ body.has-site-shell {
 
 .global-header .global-nav a:hover,
 .global-header .global-nav a[aria-current="page"] {
-    color: #d5f269;
+    color: #ABA085;
 }
 
 .global-nav .global-nav-join {
@@ -102,8 +102,8 @@ body.has-site-shell {
 
 .global-header .global-nav .global-nav-join:hover,
 .global-header .global-nav .global-nav-join[aria-current="page"] {
-    border-color: #d5f269;
-    background: #d5f269;
+    border-color: #ABA085;
+    background: #ABA085;
     color: #101b17;
 }
 
@@ -115,7 +115,7 @@ body.has-site-shell {
 .global-nav a:focus-visible,
 .global-menu-toggle:focus-visible,
 .mobile-join-link:focus-visible {
-    outline: 2px solid #d5f269;
+    outline: 2px solid #ABA085;
     outline-offset: 4px;
 }
 
@@ -139,7 +139,7 @@ body.has-site-shell {
 .join-detail h4 {
     margin: 0 0 18px;
     padding-bottom: 12px;
-    border-bottom: 2px solid #d5f269;
+    border-bottom: 2px solid #ABA085;
     color: #173e2c;
     font-size: 16px;
     font-weight: 800;
@@ -301,7 +301,7 @@ body.has-site-shell {
         min-height: 50px;
         padding: 10px 16px;
         border-radius: 2px;
-        background: #d5f269;
+        background: #ABA085;
         color: #101b17;
         font-size: 14px;
         font-weight: 800;
@@ -321,3 +321,32 @@ body.has-site-shell {
 @media (prefers-reduced-motion: reduce) {
     .global-nav,.global-menu-toggle span { transition: none; }
 }
+
+/* Emblem gold and matching club wordmarks. */
+.club-footer .footer-brand strong,
+.site-footer .site-footer-brand strong {
+    font-family: 'Dusha V5', sans-serif;
+    font-weight: 400;
+    font-synthesis: none;
+    letter-spacing: .025em;
+    line-height: 1.2;
+}
+.site-page .match-card > .match-summary { padding-right: 56px; padding-left: 56px; }
+.site-page .match-summary::after {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #ABA085;
+    border-radius: 50%;
+    background: #ABA085;
+    color: #101b17;
+    font: 400 32px/1 Arial, sans-serif;
+}
+.site-page .match-summary:hover::after { background: #beb297; }
+.site-page .match-summary:focus-visible { outline: 2px solid #173e2c; outline-offset: 6px; }
+@media (max-width: 600px) {
+    .site-page .match-card > .match-summary { padding-left: 14px; padding-right: 14px; padding-bottom: 70px; }
+    .site-page .match-summary::after { top: auto; bottom: 12px; right: calc(50% - 22px); transform: none; }
+}
+
