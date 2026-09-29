@@ -2290,7 +2290,7 @@ body {
 .club-nav a.nav-btn span { padding-left: 17px; color: var(--club-lime); }
 .club-menu-toggle { display: none; }
 .club-hero { position: relative; min-height: min(850px, 100svh); min-height: max(680px, min(850px, 100svh)); display: flex; align-items: center; overflow: hidden; color: #fff; background: #17231d; }
-.club-hero-image { position: absolute; inset: 0; background: url('../image/top1.png') center 48%/cover no-repeat; transform: scale(1.025); animation: hero-drift 18s ease-in-out infinite alternate; }
+.club-hero-image { position: absolute; inset: 0; background: url('../image/top1-clean.png') center 48%/cover no-repeat; transform: scale(1.025); animation: hero-drift 18s ease-in-out infinite alternate; }
 @keyframes hero-drift { to { transform: scale(1.09) translateX(-1%); } }
 .club-hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg,rgba(7,18,13,.84) 0%,rgba(7,18,13,.61) 41%,rgba(7,18,13,.13) 100%),linear-gradient(0deg,rgba(6,18,12,.55),transparent 30%); }
 .club-hero-grain { position: absolute; inset: 0; opacity: .12; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E"); }
